@@ -1,2 +1,29 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner">
+  <div class="container">
+    <h1>Need2 brings <strong>a great experience, for people who love to help</strong>!</h1>
+    <p>Change your life and make a good decision, choose us.</p>
+    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-flat" %>
+  </div>
+</div>
+<div class="container d-flex justify-content-between mt-5">
+
+<% Mission.last(3).each do |mission| %>
+  <%= link_to mission_path(mission), :action => 'go' do %>
+    <div class="top-card">
+      <% if mission.photo.attached? %>
+        <%= cl_image_tag mission.photo.key, {id: 'product-photo'} %>
+      <% else %>
+        <%= image_tag ('user.jpg'), {id: 'product-photo'} %>
+      <% end %>
+        <div class="top-card-infos">
+          <div class = "design">
+          <div class = "design-infos">
+            <p><%= user.pseudo %></p>
+            <p><%= user.address %></p>
+          </div>
+          </div>
+        </div>
+    </div>
+  <% end %>
+<% end %>
+</div>
