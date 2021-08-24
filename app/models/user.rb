@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :helps
   has_many :missions
+  has_one_attached :avatar
 end
