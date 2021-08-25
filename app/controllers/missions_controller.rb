@@ -48,7 +48,7 @@ class MissionsController < ApplicationController
     @mission = Mission.find(params[:id])
     @mission.destroy
 
-    redirect_to dashboards_index_path(current_user)
+    redirect_to dashboard_path(current_user)
   end
 
   private

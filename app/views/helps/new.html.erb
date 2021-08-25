@@ -1,2 +1,11 @@
 <h1>Helps#new</h1>
 <p>Find me in app/views/helps/new.html.erb</p>
+<div class="wrap">
+  <div class="container">
+    <h1>Helps</h1>
+      <%= simple_form_for [ @mission, @help ] do |f| %>
+        <%= f.submit "Create", class: "btn btn-flat" %>
+        <%= link_to 'Dashboard', root_path,  class: "btn btn-flat"  %>
+      <% end %>
+  </div>
+</div>

@@ -16,7 +16,6 @@
 require 'faker'
 require 'open-uri'
 
-User.destroy_all
 Mission.destroy_all
 
 users = [
@@ -116,7 +115,6 @@ missions = [
     user_id: 4
   }
 ]
-
 increment = 1
 
 puts 'Creating 5 fake user '
@@ -129,6 +127,7 @@ users.each do |user|
     email: user[:email],
     password: user[:password],
     phone: user[:phone],
+    address: user[:address]
   )
   user_create.avatar.attach(io: File.open("app/assets/images/user#{increment}.jpg"), filename: "user#{increment}.jpg", content_type:'image/jpg')
   increment += 1
