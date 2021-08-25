@@ -77,36 +77,42 @@ missions = [
     description: "Besoin de quelqu'un pour faire mes courses",
     started_ad: "2021-10-20 14:00:00",
     finished_at: "2021-08-20 16:00:00",
+    address: "5 Av. Romain Rolland, 06100 Nice",
     user_id: 1
   },
   {
     description: "monter une étagère ikéa",
     started_ad: "2021-08-21 14:00:00",
     finished_at: "2021-08-21 15:00:00",
+    address: "5bis, 5 Av. Desambrois, 06000 Nice",
     user_id: 3
   },
   {
     description: "M'aider pour déplacer un canapé",
     started_ad: "2021-08-24 09:00:00",
     finished_at: "2021-08-24 11:00:00",
+    address: "5 Av. Romain Rolland, 06100 Nice",
     user_id: 3
   },
   {
     description: "Besoin d'une aide pour remplir des papier administratif",
     started_ad: "2021-09-01 10:00:00",
     finished_at: "2021-09-01 12:00:00",
+    address: "5 Av. Romain Rolland, 06100 Nice",
     user_id: 1
   },
   {
     description: "m'amener faire des courses au Leclerc",
     started_ad: "2021-09-05 19:00:00",
     finished_at: "2021-09-05 21:00:00",
+    address: "69 Bd Gorbella, 06100 Nice",
     user_id: 4
   },
   {
     description: "aller chercher une commode",
     started_ad: "2021-08-10 17:00:00",
     finished_at: "2021-09-10 17:30:00",
+    address: "17 Bd Victor Hugo, 06000 Nice",
     user_id: 4
   }
 ]
@@ -135,6 +141,7 @@ missions.each do |mission|
     description: mission[:description],
     started_ad: DateTime.parse(mission[:started_ad]),
     finished_at: DateTime.parse(mission[:finished_at]),
+    address: mission[:address],
     user_id: mission[:user_id],
   )
   increment += 1 
