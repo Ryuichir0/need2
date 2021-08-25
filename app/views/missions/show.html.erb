@@ -1,2 +1,11 @@
 <h1>Missions#show</h1>
 <p>Find me in app/views/missions/show.html.erb</p>
+<div class="border w-50 m-3">
+<ul>
+  <%= cl_image_tag @mission.user.avatar.key %>
+  <li><strong>Nom : </strong><%= @mission.user.first_name %><strong> Prenom : </strong><%= @mission.user.last_name %></li>
+  <li><%= @mission.description %></li>
+</ul>
+
+<%= button_to "Create", mission_helps_path(@mission) %>
+</div>
