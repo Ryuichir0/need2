@@ -1,0 +1,47 @@
+.card-index {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 220px;
+  height: 320px;
+  border-radius: 20px;
+  margin: 10px 0;
+}
+.card-index:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.card-index > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-index h2 {
+  padding-top: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  text-decoration: none;
+}
+
+.card-index p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-index .card-index-infos {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-index-infos .card-index-user {
+  position: absolute;
+  right: 5px;
+  top: -20px;
+  width: 40px;
+}

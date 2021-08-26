@@ -24,7 +24,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'faker'
 # auth 'devise'
 gem 'devise'
-
+# cloudinary
+gem 'cloudinary'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

@@ -1,5 +1,14 @@
-.wrap-all {
-              width: 400px;
-              margin: 0 auto;
-              justify-content: center;
+.wrapper{
+  display: flex;
+  width: 94%;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  margin: 10px;
+  grid-auto-rows: minmax(100px, auto);
 }

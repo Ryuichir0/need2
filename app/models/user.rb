@@ -6,4 +6,9 @@ class User < ApplicationRecord
   has_many :helps
   has_many :missions
   has_one_attached :avatar
+
+  def rating
+    helps.pluck(:review_rating).sum / helps.count.to_f
+  end
+
 end

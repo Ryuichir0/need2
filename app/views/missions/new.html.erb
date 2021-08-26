@@ -1,2 +1,6 @@
 <h1>Missions#new</h1>
 <p>Find me in app/views/missions/new.html.erb</p>
+<%= simple_form_for [ @mission, @help ] do |f| %>
+        <%= f.submit "Create", class: "btn btn-flat" %>
+        <%= link_to 'Dashboard', root_path,  class: "btn btn-flat"  %>
+      <% end %>

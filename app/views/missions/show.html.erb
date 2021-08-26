@@ -1,2 +1,31 @@
-<h1>Missions#show</h1>
-<p>Find me in app/views/missions/show.html.erb</p>
+<div class="border container1">
+  <div class="content-show">
+    <div class="border content-category">
+      <p>content category</p>
+    </div>
+
+    <div class="border content-show-description">
+        <h3> Description :</h3>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc malesuada nulla orci, ut hendrerit dolor convallis sit amet. 
+          Sed magna quam, malesuada eu quam nec, suscipit accumsan velit. Curabitur convallis, quam a mollis vehicula, lacus mauris tincidunt magna,
+          a varius nisl libero nec lacus. Fusce hendrerit id nibh sed dignissim. Aenean sapien mauris, eleifend vitae lectus eu, sollicitudin semper ex. 
+          Phasellus nulla justo, consectetur in suscipit id, tristique vitae nisl. Sed at metus nec neque blandit elementum. Sed lectus magna, 
+          tempor et sapien eget, condimentum rhoncus nisi. Etiam egestas libero et erat rutrum, vel vulputate velit suscipit. Pellentesque vehicula facilisis
+        </p>
+    </div>
+  </div>
+
+  <div class="content-show-profil d-flex align-items-center justify-content-between ">
+    <div class="content-show-profil-left">
+      <%= cl_image_tag @mission.user.avatar.key, class: "avatar-large", alt: "avatar-large" %>
+      <div class = "content-show-profil-left-text">
+        <p> Annonce créé par <%= @mission.user.first_name.capitalize %></p>
+        <p> Membre depuis : <%= Date.parse(@mission.user.created_at.to_s)%> </p>
+      </div>
+    </div>
+    <%= button_to "Réserver", mission_helps_path(@mission), :class => "button-show btn btn-primary" %>
+  </div>
+   <div class="border content-show-review">
+    
+  </div>
+</div>

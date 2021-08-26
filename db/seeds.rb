@@ -16,7 +16,6 @@
 require 'faker'
 require 'open-uri'
 
-User.destroy_all
 Mission.destroy_all
 
 users = [
@@ -61,7 +60,7 @@ users = [
     phone: "0629872484"
   },
   {
-    pseudo: "totoLeBG",
+    pseudo: "ThomasL",
     first_name: "Thomas",
     last_name: "lebriand",
     email: "thomas.lebriand@gmail.com",
@@ -77,35 +76,35 @@ missions = [
     description: "Besoin de quelqu'un pour faire mes courses",
     started_ad: "2021-10-20 14:00:00",
     finished_at: "2021-08-20 16:00:00",
-    address: "5 Av. Romain Rolland, 06100 Nice",
+    address: " 30 Av. Jean Médecin, 06000 Nice",
     user_id: 1
   },
   {
     description: "monter une étagère ikéa",
     started_ad: "2021-08-21 14:00:00",
     finished_at: "2021-08-21 15:00:00",
-    address: "5bis, 5 Av. Desambrois, 06000 Nice",
+    address: "5 Avevenue Desambrois, 06000 Nice",
     user_id: 3
   },
   {
     description: "M'aider pour déplacer un canapé",
     started_ad: "2021-08-24 09:00:00",
     finished_at: "2021-08-24 11:00:00",
-    address: "5 Av. Romain Rolland, 06100 Nice",
+    address: "5 Avenue Romain Rolland, 06100 Nice",
     user_id: 3
   },
   {
     description: "Besoin d'une aide pour remplir des papier administratif",
     started_ad: "2021-09-01 10:00:00",
     finished_at: "2021-09-01 12:00:00",
-    address: "5 Av. Romain Rolland, 06100 Nice",
+    address: "23 Rue d'Italie, 06000 Nice",
     user_id: 1
   },
   {
     description: "m'amener faire des courses au Leclerc",
     started_ad: "2021-09-05 19:00:00",
     finished_at: "2021-09-05 21:00:00",
-    address: "69 Bd Gorbella, 06100 Nice",
+    address: "69 Boulevard Gorbella, 06100 Nice",
     user_id: 4
   },
   {
@@ -117,6 +116,11 @@ missions = [
   }
 ]
 
+help = [
+  {
+    
+  }
+]
 increment = 1
 
 puts 'Creating 5 fake user '
@@ -129,12 +133,15 @@ users.each do |user|
     email: user[:email],
     password: user[:password],
     phone: user[:phone],
+    bio: user[:bio],
+    address: user[:address]
   )
   user_create.avatar.attach(io: File.open("app/assets/images/user#{increment}.jpg"), filename: "user#{increment}.jpg", content_type:'image/jpg')
   increment += 1
 end
 increment = 1
 puts 'Creating 6 fakes missions '
+
 missions.each do |mission| 
   puts "mission #{increment}"
   mission = Mission.create(

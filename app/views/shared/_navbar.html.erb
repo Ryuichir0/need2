@@ -5,7 +5,19 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+  <div class="search-form-control form-group">
+  <%= simple_form_for :search, url: missions_path, method: :get do |f| %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a mission"
+    %>
+    <%= submit_tag "Search", class: "button-search" %>
+  <% end %>
+  </div>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-link dropdown">
@@ -16,7 +28,11 @@
             </div>
         </li>
         <li class="nav-item active">
+<<<<<<< HEAD
           <%= link_to "Home", root_path, class: "nav-link" %>
+=======
+          <%= link_to "My Dashboard", dashboard_path, class: "nav-link" %>
+>>>>>>> ae287614dd6dbdc96aad0f2284e31397735d3cda
         </li>
         <li class="nav-item">
           <%= link_to current_user.email, "#", class: "nav-link" %>
