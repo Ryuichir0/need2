@@ -1,0 +1,58 @@
+.page-content {
+    padding-top: 65px;
+    min-height: calc(100vh - 450px);
+    background-color: aliceblue;
+}
+
+div {
+  display: block;
+}
+
+.home-description {
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.home-description .home-cards {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill,minmax(320px,1fr));
+    justify-items: center;
+    margin-top: 56px;
+    width: 100%;
+}
+
+.home-card {
+    border-radius: 12px;
+    box-shadow: 0 0.25rem 0.5rem;
+    display: grid;
+    grid-template-rows: 5fr 3fr 5fr;
+    justify-items: center;
+    padding: 30px;
+    text-align: center;
+    width: 310px;
+}
+
+.home-card .home-card-title {
+    align-items: center;
+    display: flex;
+    margin: 0 0 20px;
+}
+
+.home-card.blue {
+    border: 2px solid rgb(81, 218, 252);
+}
+
+.home-card.darkblue {
+    border: 2px solid rgb(0, 102, 255);
+}
+
+.home-card.azur {
+    border: 2px solid rgb(111, 162, 255);
+}
+
+
+*, :after, :before {
+    box-sizing: border-box;
+}
