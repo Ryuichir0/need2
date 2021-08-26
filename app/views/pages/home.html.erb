@@ -1,7 +1,58 @@
 <div class="banner">
   <div class="container">
-    <h1>Need2 brings <strong>a great experience</strong> for <strong>people who like to help</strong>!</h1>
-    <p>Change your life and make a good decision, choose us.</p>
+    <h1>Need2 </h1> <br>
+    <h5>Tendre la main face au <strong>besoin</strong> !</h5>
+
+    <div class="search-form-control form-group">
+      <%= simple_form_for :search, url: missions_path, method: :get do |f| %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a mission"
+        %>
+        <%= submit_tag "Search", class: "button-search" %>
+      <% end %>
+    </div>
     <%= link_to "Sign up", new_user_registration_path, class: "btn btn-flat" %>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="content-wrapper">
+    <div class="home-description">
+      <h2>Aider ou demander de l'aide, n'aura jamais été aussi rapide et simple</h2>
+      <div class="home-cards">
+        <div class="home-card blue">
+          <i class="display-1 fas fa-hands-helping"></i>
+          <div class="home-card-title">
+            <h4>Une liste exhaustive</h4>
+          </div>
+          <div class="home-card-desc">
+          <p>Vous apporterez le sourire grâce aux multiples demandes
+          </p>
+          </div>
+        </div>
+        <div class="home-card azur">
+          <i class="display-1 far fa-clock"></i>
+          <div class="home-card-title">
+            <h4>Une demande d'aide simple et rapide</h4>
+          </div>
+          <div class="home-card-desc">
+            <p>Faites vos demandes en quelques clics
+            </p>
+          </div>
+        </div>
+        <div class="home-card darkblue">
+          <i class="display-1 fas fa-coins"></i>
+          <div class="home-card-title">
+            <h4>Un service 100% gratuit</h4>
+          </div>
+          <div class="home-card-desc">
+            <p>Créez des demandes d'aides ou proposer votre aide sans toucher à votre porte monnaie
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
