@@ -38,8 +38,7 @@
     </div>
     <div class="product-list">
       <% @missions.each do |mission| %>
-        <div class="product-card">
-          <div><%= cl_image_tag mission.photo.key, :class => "card-img-top"%>
+        <div class="product-card">image
           </div>
           <div class="info">
             <div><%= mission.description %>
