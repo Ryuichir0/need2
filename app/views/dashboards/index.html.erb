@@ -1,2 +1,58 @@
-<h1>Dashboards#index</h1>
-<p>Find me in app/views/dashboards/index.html.erb</p>
+
+
+<div class="user-card">
+  <div class="avatar">Avatar
+  <%= image_tag ('user.jpg'), :class => "card-img-top"%>
+  </div>
+  <div class="user-info">
+    <div class="user-info-content">
+      <h1>Username
+      </h1>
+      <div><i class="fas fa-pen"></i>
+      </div>
+    </div>
+      <div class="user-info-content">
+        <h1>Age
+        </h1>
+        <div><i class="fas fa-pen"></i>
+        </div>
+    </div>
+        <div class="user-info-content">
+          <h1>Address
+          </h1>
+          <div><i class="fas fa-pen"></i>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="index">
+  <div class="nav">
+    <h1>Mes offres d'aide
+    </h1>
+     <h1>Mes besoins d'aide
+    </h1>
+  </div>
+  <div class="list">
+    <div class="search-bar">SearchBar: Find a mission + zoom icon
+    </div>
+    <div class="product-list">
+      <% @missions.each do |mission| %>
+        <div class="product-card">
+          <div><%= cl_image_tag mission.photo.key, :class => "card-img-top"%>
+          </div>
+          <div class="info">
+            <div><%= mission.description %>
+            </div>
+            <div>Statut
+            </div>
+          </div>
+          <div class="date">
+            Le Date
+          </div>
+          <div class="user">Mamie Denise
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>
