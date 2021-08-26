@@ -1,4 +1,13 @@
 // Specific CSS for your home-page
+body.home{
+  grid-template-rows: 1fr ;
+  grid-template-areas: "content";
+  header{
+    grid-area: content;
+  }
+}
+
+
 h1 {
   font-family: 'Bebas Neue', cursive;
 }

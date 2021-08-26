@@ -13,10 +13,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
   </head>
 
-  <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
+  <body class="<%= action_name%>">
+    <header>
+      <%= render 'shared/navbar' %>
+    </header>
+    <main>
+     <%= render 'shared/flashes' %>
+      <%= yield %>
+      <%= render 'shared/footer' %>
+    </main>
   </body>
 </html>
