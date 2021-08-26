@@ -1,9 +1,9 @@
-<h1>Dashboards#index</h1>
+
 <p>Find me in app/views/dashboards/index.html.erb</p>
 
 <% current_user.helps.each do |help| %>
 <ul>
-  <div class="h-100 card-product">
+  <div class="card-product">
     <div class="card-product-infos">
       <li><strong> Helper </strong><%= help.user.first_name %></li>
       <li><strong> addresse </strong><%= help.user.address %></li>
