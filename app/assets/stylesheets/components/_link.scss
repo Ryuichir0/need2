@@ -1,0 +1,18 @@
+.link {
+   text-decoration: none;
+   color:black;
+   &:hover {
+     color:rgb(38, 111, 121);
+     text-decoration: none;
+   }
+
+}
+
+.a {
+text-decoration: none;
+   color:black;
+   &:hover {
+     color:rgb(38, 111, 121);
+     text-decoration: none;
+   }
+}

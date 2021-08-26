@@ -1,6 +1,8 @@
+
+
 <div class="user-card">
-  <div class="">
-  <%= image_tag ('user.jpg'), :class => "avatar-bordered-dashboard"%>
+  <div class="avatar">Avatar
+  <%= image_tag ('user.jpg'), :class => "card-img-top"%>
   </div>
   <div class="user-info">
     <div class="user-info-content">
@@ -35,12 +37,11 @@
     <div class="search-bar">SearchBar: Find a mission + zoom icon
     </div>
     <div class="product-list">
-        <div class="product-card">
-          <div>
-          image
+      <% @missions.each do |mission| %>
+        <div class="product-card">image
           </div>
           <div class="info">
-            <div>Description
+            <div><%= mission.description %>
             </div>
             <div>Statut
             </div>
@@ -51,26 +52,6 @@
           <div class="user">Mamie Denise
           </div>
         </div>
-    </div>
+      <% end %>
     </div>
 </div>
-
-
-
-<p>Find me in app/views/dashboards/index.html.erb</p>
-
-<% current_user.helps.each do |help| %>
-<ul>
-  <div class="card-product">
-    <div class="card-product-infos">
-      <li><strong> Helper </strong><%= help.user.first_name %></li>
-      <li><strong> addresse </strong><%= help.user.address %></li>
-      <li><%= help.mission.description %></li>
-      <li><%= help.mission.started_ad %></li>
-      <li><%= help.mission.finished_at %></li>
-      <li><strong> Helpee </strong><%= help.mission.user.first_name %></li>
-      <li><strong> Helpee </strong><%= help.mission.user.address %></li>
-    </div>
-  </div>
-</ul>
-<% end %>
