@@ -37,8 +37,10 @@ ActiveRecord::Schema.define(version: 2021_08_25_090252) do
   end
 
   create_table "helps", force: :cascade do |t|
-    t.string "review_comment"
-    t.string "review_rating"
+    t.string "helpee_review"
+    t.float "helpee_rating"
+    t.string "helper_review"
+    t.float "helper_rating"
     t.bigint "user_id", null: false
     t.bigint "mission_id", null: false
     t.datetime "created_at", precision: 6, null: false

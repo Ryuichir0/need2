@@ -5,10 +5,16 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :helps
   has_many :missions
+
+  has_many :helps_as_helpee, through: :missions, source: :helps
+
   has_one_attached :avatar
 
-  def rating
-    helps.pluck(:review_rating).sum / helps.count.to_f
+  def rating_as_helper
+    helps.pluck(:helper_rating).sum / helps.count.to_f
   end
 
+  def rating_as_helpee
+    helps_as_helpee.pluck(:helpee_rating).sum / helps_as_helpee.count.to_f
+  end
 end
