@@ -9,7 +9,6 @@ class HelpsController < ApplicationController
   end
 
   def create
-    puts "COUCOU"
     @help = Help.new
     @help.mission = @mission
     @help.user = current_user

@@ -1,24 +1,26 @@
-<div class="wrapper">
-    <div class="grid">
-        <% @missions.each do |mission| %>
-            <%= link_to mission_path(mission), :action => 'go' do %>
-                <div class="card-index">
-                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-                <div class="card-index-infos">
-                    <div>
-                        <h2>Demande d'aide administrative</h2>
-                        <h2><%= mission.user.first_name %></h2>
-                        <p><%= mission.description %> </p>
+<div class="bg-light">
+    <div class=" pt-4 wrapper">
+        <div class="grid">
+            <% @missions.each do |mission| %>
+                <%= link_to mission_path(mission), :action => 'go' do %>
+                    <div class="card-index">
+                    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+                    <div class="card-index-infos">
+                        <div>
+                            <h2>Demande d'aide administrative</h2>
+                            <h2><%= mission.user.first_name %></h2>
+                            <p><%= mission.description %> </p>
+                            </div>
+                            <%= cl_image_tag mission.user.avatar.key, :class => "card-index-user avatar-bordered" %>
                         </div>
-                        <%= cl_image_tag mission.user.avatar.key, :class => "card-index-user avatar-bordered" %>
-                     </div>
-                </div>
+                    </div>
+                <% end %>
             <% end %>
-        <% end %>
+        </div>
+        <div id="map"
+            style="width: 50%; height: 735px; border-radius: 10px;"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        </div>
     </div>
-    <div id="map"
-          style="width: 50%; height: 735px; border-radius: 10px;"
-          data-markers="<%= @markers.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-      </div>
 </div>
