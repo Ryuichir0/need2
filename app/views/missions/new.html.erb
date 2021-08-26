@@ -1,6 +1,25 @@
-<h1>Missions#new</h1>
-<p>Find me in app/views/missions/new.html.erb</p>
-<%= simple_form_for [ @mission, @help ] do |f| %>
-        <%= f.submit "Create", class: "btn btn-flat" %>
-        <%= link_to 'Dashboard', root_path,  class: "btn btn-flat"  %>
-      <% end %>
+<div class="container my-4 p-4 shadow">
+  <h2>Création d'une nouvelle demande d'aide </h2>
+  <%= simple_form_for [ @mission ] do |f| %>
+    <div class="field">
+      <%= f.label :description %><br>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.input :started_ad, as: :datetime%>
+    </div>
+
+    <div class="field">
+      <%= f.input :finished_at, as: :datetime %>
+    </div>
+
+    <div class="field">
+      <%= f.input :address %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Create", class: "btn btn-flat" %>
+      <%= link_to 'Dashboard', missions_path,  class: "btn btn-flat"  %>
+    </div>
+  <% end %>
+</div>
