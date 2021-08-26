@@ -23,6 +23,7 @@
       </div>
     </div>
       <div class="product-list" id="div_need" >
+      <h2> JE DEMANDE DU SOUTIEN : </h2>
       <% current_user.helps.each do |help| %>
           <div class="mt-2 product-card">
             <%= cl_image_tag help.mission.user.avatar.key, class: "avatar" %>
@@ -38,7 +39,7 @@
       <% end %>
       </div>
       <div id="div_help" class="d-none product-list">
-        <p>salut</p>
+        <h2> JE PORTE SOUTIEN :</h2>
         <% current_user.helps.each do |help| %>
             <div class="mt-2 product-card">
               <%= cl_image_tag help.mission.user.avatar.key, class: "avatar" %>
