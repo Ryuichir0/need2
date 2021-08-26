@@ -14,7 +14,7 @@ const initMapbox = () => {
     map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
   };
 
-  const mapElement = document.getElementById('mapA');
+  const mapElement = document.getElementById('map');
   if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     console.log(markers)

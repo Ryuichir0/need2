@@ -1,18 +1,29 @@
 .search-form-control {
   position: relative;
+  padding-top: 10px;
 }
 
-.search-form-control .btn {
+.search-form-control .button-search {
   position: absolute;
-  top: 8px;
-  bottom: 8px;
-  right: 8px;
+  top: 1;
+  right: 0;
+  bottom: 0;
+  border-radius: 0 30px 30px 0;
+  height: 84%;
+  width: 15%;
+  background-color: rgb(75, 114, 243);
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(#167FFB, #0F60C4);
 }
 
 .search-form-control .form-control {
   height: 3.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border: 1px solid #E7E7E7;
+  border-radius: 30px;
 }
 
 .search-form-control .form-control:focus {
