@@ -26,6 +26,6 @@
     <%= button_to "Réserver", mission_helps_path(@mission), :class => "button-show btn btn-primary" %>
   </div>
    <div class="border content-show-review">
-    
+      <%= @mission.user.rating_as_helpee %>
   </div>
 </div>

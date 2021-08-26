@@ -116,13 +116,34 @@ missions = [
   }
 ]
 
-help = [
+helps = [
   {
-    
+    helpee_review: " Adresse correct tout c'est bien passé",
+    helpee_rating: 4.5,
+    helper_review: " Personne à l'heure, gentil je recommande",
+    helper_rating: 5,
+    user_id: 5,
+    mission_id: 1
+  },
+  {
+    helpee_review: " Très gentille personne, on c'est bien amusé",
+    helpee_rating: 4.9,
+    helper_review: " Personne très gentille, vraiment une bonne personne je recommande",
+    helper_rating: 5,
+    user_id: 2,
+    mission_id: 1
+  },
+  {
+    helpee_review: " Très gentille personne, c'était cool",
+    helpee_rating: 4,
+    helper_review: " Personne désagréable je ne recommande pas",
+    helper_rating: 2,
+    user_id: 2,
+    mission_id: 1
   }
 ]
-increment = 1
 
+increment = 1
 puts 'Creating 5 fake user '
 users.each do |user| 
   puts "user #{increment}"
@@ -154,5 +175,19 @@ missions.each do |mission|
   increment += 1 
 end
 puts "Missions Created"
-puts "all is ok"
 
+increment = 1
+helps.each do |help| 
+  puts "help #{increment}"
+  help = Help.create(
+    helpee_review: help[:helpee_review],
+    helpee_rating: help[:helpee_rating],
+    helper_review: help[:helper_review],
+    helper_rating: help[:helper_rating],
+    user_id: help[:user_id],
+    mission_id: help[:mission_id]
+  )
+  increment += 1 
+end
+puts "helps Created"
+puts "all is ok"
