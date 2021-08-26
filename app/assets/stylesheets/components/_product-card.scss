@@ -1,0 +1,19 @@
+.product-card {
+  background-color: $user-font;
+  display: flex;
+   .info {
+    margin: 10px 15px;
+   }
+   .date {
+    margin: 10px 15px;
+    flex-grow:1;
+    font-weight: bold;
+    padding-top: 23px;
+
+   }
+  .user {
+    margin: 10px 15px;
+    color: $user;
+    font-weight: bold;
+  }
+}
