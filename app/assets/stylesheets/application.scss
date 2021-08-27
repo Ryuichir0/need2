@@ -10,15 +10,18 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/button";
 @import "pages/index";
 @import "pages/show";
+@import "pages/dashboard";
+
 @import "components/card-products";
 @import "components/wrapper";
 @import 'components/card_index';
 
 @import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
 
-body{
+body.home{
   height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr;

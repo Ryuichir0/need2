@@ -1,76 +1,57 @@
 <div class="user-card">
   <div class="">
-  <%= image_tag ('user.jpg'), :class => "avatar-bordered-dashboard"%>
+  <%= cl_image_tag current_user.avatar.key, :class => "avatar-bordered"%>
   </div>
   <div class="user-info">
-    <div class="user-info-content">
-      <h1>Username
-      </h1>
-      <div><i class="fas fa-pen"></i>
+    <div class="p-3 pt-4 user-info-content">
+        <h2>pseudo : <%= current_user.pseudo %> <i class="fas fa-pen"></i></h2>
+        <h2>Prénom : <%= current_user.first_name %> <i class="fas fa-pen"></i></h2>
+        <h2>Nom de famille : <%= current_user.last_name %> <i class="fas fa-pen"></i></h2>
+        <h2>Adresse : <%= current_user.address %><i class="fas fa-pen"></i></h2>
+    </div>
+  </div>
+</div>
+<div class="container"> 
+  <div class="card-index-infos">
+      <div id="help"><h2>Mes offres d'aide / </h2></div>
+      <div id="need"><h2>Mes demandes d'aide </h2></div>
+  </div>
+
+    <div class="list">
+      <div class="search-bar w-50 ml-2">
+        <p class="border">Find a mission + zoom icon <i class="fas fa-search"></i></p>
       </div>
     </div>
-      <div class="user-info-content">
-        <h1>Age
-        </h1>
-        <div><i class="fas fa-pen"></i>
-        </div>
-    </div>
-        <div class="user-info-content">
-          <h1>Address
-          </h1>
-          <div><i class="fas fa-pen"></i>
-        </div>
-    </div>
-  </div>
-</div>
-
-<div class="index">
-  <div class="nav">
-    <h1>Mes offres d'aide
-    </h1>
-     <h1>Mes besoins d'aide
-    </h1>
-  </div>
-  <div class="list">
-    <div class="search-bar">SearchBar: Find a mission + zoom icon
-    </div>
-    <div class="product-list">
-        <div class="product-card">
-          <div>
-          image
-          </div>
-          <div class="info">
-            <div>Description
+      <div class="product-list" id="div_need" >
+      <h2> JE DEMANDE DU SOUTIEN : </h2>
+      <% current_user.helps.each do |help| %>
+          <div class="mt-2 product-card">
+            <%= cl_image_tag help.mission.user.avatar.key, class: "avatar" %>
+            <div class="info">
+              <p> <%= help.mission.description %></p>
+              <p>statut</p>
             </div>
-            <div>Statut
+            <div class="date">
+              <%= Date.parse(help.mission.started_ad.to_s) %>
             </div>
+            <p class="user"><%= help.mission.user.first_name %> </p>
           </div>
-          <div class="date">
-            Le Date
-          </div>
-          <div class="user">Mamie Denise
-          </div>
+      <% end %>
+      </div>
+      <div id="div_help" class="d-none product-list">
+        <h2> JE PORTE SOUTIEN :</h2>
+        <% current_user.helps.each do |help| %>
+            <div class="mt-2 product-card">
+              <%= cl_image_tag help.mission.user.avatar.key, class: "avatar" %>
+              <div class="info">
+                <p> <%= help.mission.description %></p>
+                <p>statut</p>
+              </div>
+              <div class="date">
+                <%= Date.parse(help.mission.started_ad.to_s) %>
+              </div>
+              <p class="user"><%= help.mission.user.first_name %> </p>
+            </div>
+        <% end %>
         </div>
-    </div>
-    </div>
 </div>
-
-
-
-<p>Find me in app/views/dashboards/index.html.erb</p>
-
-<% current_user.helps.each do |help| %>
-<ul>
-  <div class="card-product">
-    <div class="card-product-infos">
-      <li><strong> Helper </strong><%= help.user.first_name %></li>
-      <li><strong> addresse </strong><%= help.user.address %></li>
-      <li><%= help.mission.description %></li>
-      <li><%= help.mission.started_ad %></li>
-      <li><%= help.mission.finished_at %></li>
-      <li><strong> Helpee </strong><%= help.mission.user.first_name %></li>
-      <li><strong> Helpee </strong><%= help.mission.user.address %></li>
-    </div>
-  </div>
-</ul>
-<% end %>

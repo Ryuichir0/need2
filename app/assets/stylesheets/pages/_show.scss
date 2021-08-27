@@ -16,6 +16,9 @@ body{
   margin: 20px 10px;
 }
 .content-show-description{
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 20px 0 20px 20px; 
   border-radius: 20px;
   width: 60%;
@@ -41,9 +44,10 @@ body{
   font-size: 12px;
   padding-left: 5px;
 }
-
-
 .content-show-review {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 90%;
   height: 400px;
   border-radius: 20px;

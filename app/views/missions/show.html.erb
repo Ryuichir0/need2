@@ -23,9 +23,11 @@
         <p> Membre depuis : <%= Date.parse(@mission.user.created_at.to_s)%> </p>
       </div>
     </div>
-    <%= button_to "Réserver", mission_helps_path(@mission), :class => "button-show btn btn-primary" %>
+    <%= button_to "Réserver", mission_helps_path(@mission), :class => "button-validate" %>
   </div>
    <div class="border content-show-review">
+      <% if @mission.user.rating_as_helpee != nil %>
       <%= @mission.user.rating_as_helpee.floor(2) %>
+      <% end %>
   </div>
 </div>
