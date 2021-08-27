@@ -60,11 +60,11 @@ users = [
     phone: "0629872484"
   },
   {
-    pseudo: "ThomasL",
-    first_name: "Thomas",
-    last_name: "lebriand",
-    email: "thomas.lebriand@gmail.com",
-    bio: "Jeune pour aider",
+    pseudo: "SylvieL",
+    first_name: "Sylvie",
+    last_name: "Topita",
+    email: "sylvie.topita@gmail.com",
+    bio: "mère au foyer de 40 ans",
     address: "21 rue de paris Nice",
     password: "azerty",
     phone: "0629872485"
@@ -89,7 +89,7 @@ missions = [
     started_ad: "2021-08-10 17:00:00",
     finished_at: "2021-09-10 17:30:00",
     address: "17 Bd Victor Hugo, 06000 Nice",
-    user_id: 4,
+    user_id: 2,
     category_id: 2
   },
   {
@@ -109,7 +109,7 @@ missions = [
     started_ad: "2021-09-05 20:00:00",
     finished_at: "2021-09-05 22:00:00",
     address: "71 Boulevard Gorbella, 06100 Nice",
-    user_id: 4,
+    user_id: 3,
     category_id: 4
   },
   {
@@ -129,7 +129,7 @@ missions = [
     started_ad: "2021-09-05 19:00:00",
     finished_at: "2021-09-05 21:00:00",
     address: "69 Boulevard Gorbella, 06100 Nice",
-    user_id: 4,
+    user_id: 2,
     category_id: 6
   },
   {
