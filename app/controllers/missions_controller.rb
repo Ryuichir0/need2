@@ -2,8 +2,9 @@ class MissionsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    if params[:query] && params[:query] != ""
-      @missions = Mission.search_by_address(params[:query])
+    if params[:query].present? && params[:query] != ""
+      @missions = Mission.where(address: params[:query])
+      # @missions = Mission.search_by_address(params[:query])
     else
       @missions = Mission.all
     end

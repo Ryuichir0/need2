@@ -17,6 +17,7 @@ margin-left:40px;
 padding: 20px;
   h1 {
     margin-right: 30px;
+    font-size:40px;
 
   }
 }
@@ -37,11 +38,11 @@ margin:15px;
 .nav{
   background-color: $user-info;
   width:422px;
-  height:443px;
+  height:407px;
   border-radius:19px;
   vertical-align: center;
-  padding:60px 10px;
-  margin: 20px 100px 0px 0px;
+  padding:10px 10px;
+  margin: 137px 100px 0px 0px;
   color:$user-info-font;
    h1:hover {
      color: $user-info-font-hover;
@@ -50,6 +51,13 @@ margin:15px;
     margin: 50px 0px;
     padding-left:15px;
    }
+}
+
+.nav-title {
+  padding: 20px 10px;
+}
+
+.caret{
 }
 
 .list{
@@ -70,4 +78,9 @@ margin:15px;
 
 .product-list {
   padding: 15px 30px;
+}
+
+.search-bar {
+  flex-grow:1;
+
 }

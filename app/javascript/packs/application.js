@@ -33,4 +33,19 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
+  // navbar-dashboard
+  $('.search-button').click(function () {
+    $(this).parent().toggleClass('open');
+  });
+
+  const nav = document.getElementById("nav");
+  const caret = document.getElementById("caret");
+
+  caret.addEventListener('click', (event) => {
+
+    if (nav.style.display === "none"){
+    nav.style.display = "";
+    } else { nav.style.display = "none"; }
+
+  });
 });

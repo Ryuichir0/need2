@@ -1,22 +1,24 @@
 <div class="user-card">
+
   <div class="">
   <%= image_tag ('user.jpg'), :class => "avatar-bordered-dashboard"%>
   </div>
+
   <div class="user-info">
     <div class="user-info-content">
-      <h1>Username
+      <h1>Username<%= current_user.pseudo %>
       </h1>
       <div><i class="fas fa-pen"></i>
       </div>
     </div>
       <div class="user-info-content">
-        <h1>Age
+        <h1><%= current_user %>
         </h1>
         <div><i class="fas fa-pen"></i>
         </div>
     </div>
         <div class="user-info-content">
-          <h1>Address
+          <h1>Address<%= current_user.address %>
           </h1>
           <div><i class="fas fa-pen"></i>
         </div>
@@ -25,22 +27,43 @@
 </div>
 
 <div class="index">
-  <div class="nav">
-    <h1>Mes offres d'aide
-    </h1>
-     <h1>Mes besoins d'aide
-    </h1>
-  </div>
-  <div class="list">
-    <div class="search-bar">SearchBar: Find a mission + zoom icon
+
+<div class="caret" id="caret">
+    <i class="fas fa-angle-up"></i>
     </div>
+  <div class="nav" id="nav">
+
+    <div class="nav-title" id="nav-title">
+      <h1>Mes offres d'aide
+      </h1>
+      <h1>Mes besoins d'aide
+      </h1>
+    </div>
+  </div>
+
+  <div class="list">
+    <div class="search-bar">
+      <form action="/missions" accept="charset UTF-8" method="get">
+        <div class="search">
+          <input id="query" type="text" class="search-box" name="query" placeholder="find a mission"/>
+          <span input class="search-button" type="submit" name="commit" value="Search" data-disable-with="Search">
+          <span class="search-icon"></span>
+          </span>
+        </div>
+      <form>
+      <!--<%= form_tag missions_path, method: :get do %>
+          <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a mission" %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>-->
+    </div>
+
     <div class="product-list">
         <div class="product-card">
           <div>
           image
           </div>
           <div class="info">
-            <div>Description
+            <div>
             </div>
             <div>Statut
             </div>
@@ -54,10 +77,6 @@
     </div>
     </div>
 </div>
-
-
-
-<p>Find me in app/views/dashboards/index.html.erb</p>
 
 <% current_user.helps.each do |help| %>
 <ul>
@@ -74,3 +93,5 @@
   </div>
 </ul>
 <% end %>
+
+/* <p>Find me in app/views/dashboards/index.html.erb</p>
