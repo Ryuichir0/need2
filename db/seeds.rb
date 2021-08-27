@@ -74,7 +74,8 @@ users = [
 missions = [
   {
     slug: "administrative",
-    description: "Besoin d'une aide pour remplir des papier administratif",
+    description: "Etant seule à la maison,
+     Je cherche quelqu'un qui puisse m'aider à faire avec moi ma demande d'avis d'imposition ",
     started_ad: "2021-09-01 10:00:00",
     finished_at: "2021-09-01 12:00:00",
     address: "23 Rue d'Italie, 06000 Nice",
@@ -83,7 +84,8 @@ missions = [
   },
   {
     slug: "bricolage",
-    description: "m'aider à monter une commode",
+    description: "Ayant mal au dos je ne peux pas monter moi-même mon étagère, 
+    je cherche quelqu'un qui puisse m'aider ",
     started_ad: "2021-08-10 17:00:00",
     finished_at: "2021-09-10 17:30:00",
     address: "17 Bd Victor Hugo, 06000 Nice",
@@ -92,7 +94,8 @@ missions = [
   },
   {
     slug: "domicile",
-    description: "Besoin de quelqu'un pour m'aider à faire le ménage",
+    description: "Personne de 65 ans, je cherche quelqu'un pour m'aider à faire le ménage chez moi,
+     mes douleurs aux jambes ne me permette pas de le faire correctement et totalement ",
     started_ad: "2021-10-20 14:00:00",
     finished_at: "2021-08-20 16:00:00",
     address: " 30 Av. Jean Médecin, 06000 Nice",
@@ -101,7 +104,8 @@ missions = [
   },
   {
     slug: "linguistique",
-    description: "m'aider pour un voyage à l'étranger",
+    description: "Je pars rejoindre ma famille au USA, et je cherche quelqu'un de gentil et avec un bon niveau d'anglais,
+    qui puisse m'aider à traduire et remplir avec moi ma demande de visa ",
     started_ad: "2021-09-05 20:00:00",
     finished_at: "2021-09-05 22:00:00",
     address: "71 Boulevard Gorbella, 06100 Nice",
@@ -110,7 +114,8 @@ missions = [
   },
   {
     slug: "logistique",
-    description: "M'aider pour déplacer un canapé",
+    description: "je cherche une âme charitable afin de pouvoir m'aider à déplacer un canapé,
+    ayant de grosse douleur au dos je ne peux pas le porter tout seul",
     started_ad: "2021-08-24 09:00:00",
     finished_at: "2021-08-24 11:00:00",
     address: "5 Avenue Romain Rolland, 06100 Nice",
@@ -119,7 +124,8 @@ missions = [
   },
   {
     slug: "personne",
-    description: "m'amener faire des courses au Leclerc",
+    description: "Personne agée, je cherche quelqu'un qui puisse m'amener au supermarché, 
+    faire mes courses n'ayant plus la possibilité de conduire actuellement",
     started_ad: "2021-09-05 19:00:00",
     finished_at: "2021-09-05 21:00:00",
     address: "69 Boulevard Gorbella, 06100 Nice",
@@ -128,7 +134,8 @@ missions = [
   },
   {
     slug: "scolaire",
-    description: "Aider mon petit-fils avec ses devoirs",
+    description: "Ayant quitté l'école très tôt,
+     je cherche quelqu'un qui puisse aider mon fils à faire ses devoirs de 4 ème",
     started_ad: "2021-08-21 14:00:00",
     finished_at: "2021-08-21 15:00:00",
     address: "5 Avevenue Desambrois, 06000 Nice",
@@ -181,10 +188,10 @@ categories = [
     name: "Aide logistique",
   },
   {
-    name: "aide à la personne",
+    name: "Aide à la personne",
   },
   {
-    name: "aide scolaire",
+    name: "Aide scolaire",
   }
 ]
 

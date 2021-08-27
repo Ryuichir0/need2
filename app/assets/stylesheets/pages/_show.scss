@@ -34,8 +34,9 @@ body{
   text-justify: auto;
 }
 
-.avatar-large {
-  width: 60px;
+.content-show-profil-left .avatar-large {
+  width: 70px;
+  object-fit: cover;
   height: 70px;
   border-radius: 50%;
 }

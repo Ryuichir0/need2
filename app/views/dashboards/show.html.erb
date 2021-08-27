@@ -4,10 +4,10 @@
   </div>
   <div class="user-info">
     <div class="p-3 pt-4 user-info-content">
-        <h2>pseudo : <%= current_user.pseudo %> <i class="fas fa-pen"></i></h2>
-        <h2>Prénom : <%= current_user.first_name %> <i class="fas fa-pen"></i></h2>
-        <h2>Nom de famille : <%= current_user.last_name %> <i class="fas fa-pen"></i></h2>
-        <h2>Adresse : <%= current_user.address %><i class="fas fa-pen"></i></h2>
+        <h2>pseudo : <%= current_user.pseudo %>  <!-- <i class="fas fa-pen"></i>--></h2>
+        <h2>Prénom : <%= current_user.first_name %> <!-- <i class="fas fa-pen"></i>--></h2>
+        <h2>Nom de famille : <%= current_user.last_name %> <!-- <i class="fas fa-pen"></i>--></h2>
+        <h2>Adresse : <%= current_user.address %><!-- <i class="fas fa-pen"></i>--></h2>
     </div>
   </div>
 </div>
@@ -41,7 +41,7 @@
         <h2> JE PORTE SOUTIEN :</h2>
         <% current_user.helps.each do |help| %>
             <div class="mt-2 product-card">
-              <%= cl_image_tag help.mission.user.avatar.key, class: "avatar-large" %>
+              <%= cl_image_tag help.mission.user.avatar.key, class: "avatar-card" %>
               <div class="info">
                 <p> <%= help.mission.description %></p>
                 <p>statut</p>
