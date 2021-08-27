@@ -1,9 +1,8 @@
 <div class="border container1">
   <div class="content-show">
-    <div class="border content-category">
-      <p>content category</p>
+  <div class="content-category">
+      <%= cl_image_tag @mission.photo_category.key %> 
     </div>
-
     <div class="border content-show-description">
         <h3> Description :</h3>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc malesuada nulla orci, ut hendrerit dolor convallis sit amet. 
@@ -23,11 +22,11 @@
         <p> Membre depuis : <%= Date.parse(@mission.user.created_at.to_s)%> </p>
       </div>
     </div>
+    <% if current_user != @mission.user %>
     <%= button_to "Réserver", mission_helps_path(@mission), :class => "button-validate" %>
+    <% end %>
   </div>
    <div class="border content-show-review">
-      <% if @mission.user.rating_as_helpee != nil %>
-      <%= @mission.user.rating_as_helpee.floor(2) %>
-      <% end %>
+      <%= @mission.user.rating_as_helpee.floor(2) %> 
   </div>
 </div>

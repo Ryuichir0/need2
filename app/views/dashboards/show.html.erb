@@ -13,28 +13,27 @@
 </div>
 <div class="container"> 
   <div class="card-index-infos">
-      <div id="help"><h2>Mes offres d'aide / </h2></div>
-      <div id="need"><h2>Mes demandes d'aide </h2></div>
+      <div id="need"><h2>Mes demandes d'aides / </h2></div>
+      <div id="help"><h2>Mes offres d'aides </h2></div>
   </div>
 
     <div class="list">
       <div class="search-bar w-50 ml-2">
-        <p class="border">Find a mission + zoom icon <i class="fas fa-search"></i></p>
+        <!-- commentaire particulier  <p class="border">Find a mission + zoom icon <i class="fas fa-search"></i></p>-->
       </div>
     </div>
       <div class="product-list" id="div_need" >
       <h2> JE DEMANDE DU SOUTIEN : </h2>
-      <% current_user.helps.each do |help| %>
+      <% current_user.missions.each do |mission| %>
           <div class="mt-2 product-card">
-            <%= cl_image_tag help.mission.user.avatar.key, class: "avatar-large" %>
             <div class="info">
-              <p> <%= help.mission.description %></p>
+              <p> <%= mission.description %></p>
               <p>statut</p>
             </div>
             <div class="date">
-              <%= Date.parse(help.mission.started_ad.to_s) %>
+              <%= Date.parse(mission.started_ad.to_s) %>
             </div>
-            <p class="user"><%= help.mission.user.first_name %> </p>
+            <p class="user"><%= mission.user.first_name %> </p>
           </div>
       <% end %>
       </div>

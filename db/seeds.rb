@@ -73,47 +73,68 @@ users = [
 
 missions = [
   {
-    description: "Besoin de quelqu'un pour faire mes courses",
-    started_ad: "2021-10-20 14:00:00",
-    finished_at: "2021-08-20 16:00:00",
-    address: " 30 Av. Jean Médecin, 06000 Nice",
-    user_id: 1
-  },
-  {
-    description: "monter une étagère ikéa",
-    started_ad: "2021-08-21 14:00:00",
-    finished_at: "2021-08-21 15:00:00",
-    address: "5 Avevenue Desambrois, 06000 Nice",
-    user_id: 3
-  },
-  {
-    description: "M'aider pour déplacer un canapé",
-    started_ad: "2021-08-24 09:00:00",
-    finished_at: "2021-08-24 11:00:00",
-    address: "5 Avenue Romain Rolland, 06100 Nice",
-    user_id: 3
-  },
-  {
+    slug: "administrative",
     description: "Besoin d'une aide pour remplir des papier administratif",
     started_ad: "2021-09-01 10:00:00",
     finished_at: "2021-09-01 12:00:00",
     address: "23 Rue d'Italie, 06000 Nice",
-    user_id: 1
+    user_id: 1,
+    category_id: 1
   },
   {
+    slug: "bricolage",
+    description: "m'aider à monter une commode",
+    started_ad: "2021-08-10 17:00:00",
+    finished_at: "2021-09-10 17:30:00",
+    address: "17 Bd Victor Hugo, 06000 Nice",
+    user_id: 4,
+    category_id: 2
+  },
+  {
+    slug: "domicile",
+    description: "Besoin de quelqu'un pour m'aider à faire le ménage",
+    started_ad: "2021-10-20 14:00:00",
+    finished_at: "2021-08-20 16:00:00",
+    address: " 30 Av. Jean Médecin, 06000 Nice",
+    user_id: 1,
+    category_id: 3
+  },
+  {
+    slug: "linguistique",
+    description: "m'aider pour un voyage à l'étranger",
+    started_ad: "2021-09-05 20:00:00",
+    finished_at: "2021-09-05 22:00:00",
+    address: "71 Boulevard Gorbella, 06100 Nice",
+    user_id: 4,
+    category_id: 4
+  },
+  {
+    slug: "logistique",
+    description: "M'aider pour déplacer un canapé",
+    started_ad: "2021-08-24 09:00:00",
+    finished_at: "2021-08-24 11:00:00",
+    address: "5 Avenue Romain Rolland, 06100 Nice",
+    user_id: 3,
+    category_id: 5
+  },
+  {
+    slug: "personne",
     description: "m'amener faire des courses au Leclerc",
     started_ad: "2021-09-05 19:00:00",
     finished_at: "2021-09-05 21:00:00",
     address: "69 Boulevard Gorbella, 06100 Nice",
-    user_id: 4
+    user_id: 4,
+    category_id: 6
   },
   {
-    description: "aller chercher une commode",
-    started_ad: "2021-08-10 17:00:00",
-    finished_at: "2021-09-10 17:30:00",
-    address: "17 Bd Victor Hugo, 06000 Nice",
-    user_id: 4
-  }
+    slug: "scolaire",
+    description: "Aider mon petit-fils avec ses devoirs",
+    started_ad: "2021-08-21 14:00:00",
+    finished_at: "2021-08-21 15:00:00",
+    address: "5 Avevenue Desambrois, 06000 Nice",
+    user_id: 3,
+    category_id: 7
+  },
 ]
 
 helps = [
@@ -143,6 +164,41 @@ helps = [
   }
 ]
 
+categories = [
+  {
+    name: "Aide administrative",
+  },
+  {
+    name: "Aide au bricolage",
+  },
+  {
+    name: "Aide à domicile",
+  },
+  {
+    name: "Aide linguistique",
+  },
+  {
+    name: "Aide logistique",
+  },
+  {
+    name: "aide à la personne",
+  },
+  {
+    name: "aide scolaire",
+  }
+]
+
+
+increment = 1
+puts "creation category"
+categories.each do |category| 
+  puts "category #{increment}"
+  category = Category.create(
+    name: category[:name]
+  )
+  increment += 1 
+end
+
 increment = 1
 puts 'Creating 5 fake user '
 users.each do |user| 
@@ -165,14 +221,17 @@ puts 'Creating 6 fakes missions '
 
 missions.each do |mission| 
   puts "mission #{increment}"
+  name = mission[:slug]
   mission = Mission.create(
     description: mission[:description],
     started_ad: DateTime.parse(mission[:started_ad]),
     finished_at: DateTime.parse(mission[:finished_at]),
     address: mission[:address],
     user_id: mission[:user_id],
+    category_id: mission[:category_id],
   )
   increment += 1 
+  mission.photo_category.attach(io: File.open("app/assets/images/category/aide_#{name}.png"), filename: "#{name}.png", content_type:'image/png')
 end
 puts "Missions Created"
 

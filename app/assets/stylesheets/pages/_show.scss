@@ -13,7 +13,13 @@ body{
 }
 .content-category{
   width: 25%;
-  margin: 20px 10px;
+  margin: 20px 0;
+  img{
+    border-radius: 15%;
+    object-fit: cover;
+    width: 375px;
+    height: 350px;
+  }
 }
 .content-show-description{
   overflow: hidden;
