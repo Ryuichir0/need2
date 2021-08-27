@@ -16,9 +16,9 @@
 require 'faker'
 require 'open-uri'
 
-User.destroy_all
 Category.destroy_all
 Mission.destroy_all
+User.destroy_all
 Help.destroy_all
 
 cat
