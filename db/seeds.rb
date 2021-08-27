@@ -247,17 +247,17 @@ end
 puts "Missions Created"
 
 increment = 1
-helps.each do |help| 
-  puts "help #{increment}"
-  help = Help.create(
-    helpee_review: help[:helpee_review],
-    helpee_rating: help[:helpee_rating],
-    helper_review: help[:helper_review],
-    helper_rating: help[:helper_rating],
-    user_id: help[:user_id],
-    mission_id: help[:mission_id]
-  )
-  increment += 1 
-end
+# helps.each do |help| 
+#   puts "help #{increment}"
+#   help = Help.create(
+#     helpee_review: help[:helpee_review],
+#     helpee_rating: help[:helpee_rating],
+#     helper_review: help[:helper_review],
+#     helper_rating: help[:helper_rating],
+#     user_id: help[:user_id],
+#     mission_id: help[:mission_id]
+#   )
+#   increment += 1 
+# end
 puts "helps Created"
 puts "all is ok"
