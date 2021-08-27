@@ -17,9 +17,9 @@ require 'faker'
 require 'open-uri'
 
 Category.destroy_all
+Help.destroy_all
 Mission.destroy_all
 User.destroy_all
-Help.destroy_all
 
 
 users = [
@@ -88,7 +88,7 @@ missions = [
   },
   {
     slug: "bricolage",
-    description: "Ayant mal au dos je ne peux pas monter moi-même mon étagère, 
+    description: "Ayant mal au dos je ne peux pas monter moi-même mon étagère,
     je cherche quelqu'un qui puisse m'aider ",
     started_ad: "2021-08-10 17:00:00",
     finished_at: "2021-09-10 17:30:00",
@@ -128,7 +128,7 @@ missions = [
   },
   {
     slug: "personne",
-    description: "Personne agée, je cherche quelqu'un qui puisse m'amener au supermarché, 
+    description: "Personne agée, je cherche quelqu'un qui puisse m'amener au supermarché,
     faire mes courses n'ayant plus la possibilité de conduire actuellement",
     started_ad: "2021-09-05 19:00:00",
     finished_at: "2021-09-05 21:00:00",
@@ -202,19 +202,22 @@ categories = [
 
 increment = 1
 puts "creation category"
-categories.each do |category| 
+category_list = []
+categories.each do |category|
   puts "category #{increment}"
-  category = Category.create(
+  category = Category.create!(
     name: category[:name]
   )
-  increment += 1 
+  category_list << category
+  increment += 1
 end
 
 increment = 1
 puts 'Creating 5 fake user '
-users.each do |user| 
+user_list = []
+users.each do |user|
   puts "user #{increment}"
-  user_create = User.create(
+  user_create = User.new(
     pseudo: user[:pseudo],
     first_name: user[:first_name],
     last_name: user[:last_name],
@@ -225,29 +228,32 @@ users.each do |user|
     address: user[:address]
   )
   user_create.avatar.attach(io: File.open("app/assets/images/user#{increment}.jpg"), filename: "user#{increment}.jpg", content_type:'image/jpg')
+  user_create.save!
+  user_list << user_create
   increment += 1
 end
 increment = 1
 puts 'Creating 6 fakes missions '
 
-missions.each do |mission| 
+missions.each do |mission|
   puts "mission #{increment}"
   name = mission[:slug]
-  mission = Mission.create(
+  mission = Mission.new(
     description: mission[:description],
     started_ad: DateTime.parse(mission[:started_ad]),
     finished_at: DateTime.parse(mission[:finished_at]),
     address: mission[:address],
-    user_id: mission[:user_id],
-    category_id: mission[:category_id],
+    user: user_list[mission[:user_id] - 1],
+    category: category_list[mission[:category_id] - 1],
   )
-  increment += 1 
+  increment += 1
   mission.photo_category.attach(io: File.open("app/assets/images/category/aide_#{name}.png"), filename: "#{name}.png", content_type:'image/png')
+  mission.save!
 end
 puts "Missions Created"
 
 increment = 1
-# helps.each do |help| 
+# helps.each do |help|
 #   puts "help #{increment}"
 #   help = Help.create(
 #     helpee_review: help[:helpee_review],
@@ -257,7 +263,7 @@ increment = 1
 #     user_id: help[:user_id],
 #     mission_id: help[:mission_id]
 #   )
-#   increment += 1 
+#   increment += 1
 # end
 puts "helps Created"
 puts "all is ok"
