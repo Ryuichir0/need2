@@ -64,9 +64,11 @@ margin:15px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 15px;
 }
-.avatar {
-  width: 80px;
-  height: 80px;
+.avatar-card {
+  object-fit: cover;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   margin: 10px 10px;
 }
 .user-info-content .fas {

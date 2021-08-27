@@ -54,6 +54,6 @@ class MissionsController < ApplicationController
   private
 
   def mission_params
-    params.require(:mission).permit(:description, :started_at, :finished_at, :user_id)
+    params.require(:mission).permit(:description, :started_at, :finished_at, :user_id, :photo_category)
   end
 end

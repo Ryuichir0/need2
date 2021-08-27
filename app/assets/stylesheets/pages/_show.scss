@@ -13,7 +13,13 @@ body{
 }
 .content-category{
   width: 25%;
-  margin: 20px 10px;
+  margin: 20px 0;
+  img{
+    border-radius: 15%;
+    object-fit: cover;
+    width: 375px;
+    height: 350px;
+  }
 }
 .content-show-description{
   overflow: hidden;
@@ -28,8 +34,9 @@ body{
   text-justify: auto;
 }
 
-.avatar-large {
-  width: 60px;
+.content-show-profil-left .avatar-large {
+  width: 70px;
+  object-fit: cover;
   height: 70px;
   border-radius: 50%;
 }
