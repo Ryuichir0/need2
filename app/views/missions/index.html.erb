@@ -5,11 +5,10 @@
                 <%= link_to mission_path(mission), :action => 'go' do %>
                     <div class="card-index">
                     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-                    <div class="card-index-infos">
+                    <div class="card-index-members">
                         <div>
-                            <h2>Demande d'aide administrative</h2>
-                            <h2><%= mission.user.first_name %></h2>
-                            <p><%= mission.description %> </p>
+                            <p id="title">Demande d'aide administrative</p>
+                            <p id="desc"><%= mission.description %> </p>
                             </div>
                             <%= cl_image_tag mission.user.avatar.key, :class => "card-index-user avatar-bordered" %>
                         </div>
