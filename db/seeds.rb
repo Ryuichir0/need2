@@ -21,7 +21,7 @@ Mission.destroy_all
 User.destroy_all
 Help.destroy_all
 
-cat
+
 users = [
   {
     pseudo: "VickySa",
