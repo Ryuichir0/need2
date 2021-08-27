@@ -89,7 +89,7 @@ missions = [
     started_ad: "2021-08-10 17:00:00",
     finished_at: "2021-09-10 17:30:00",
     address: "17 Bd Victor Hugo, 06000 Nice",
-    user_id: 2,
+    user_id: 4,
     category_id: 2
   },
   {
@@ -109,7 +109,7 @@ missions = [
     started_ad: "2021-09-05 20:00:00",
     finished_at: "2021-09-05 22:00:00",
     address: "71 Boulevard Gorbella, 06100 Nice",
-    user_id: 2,
+    user_id: 4,
     category_id: 4
   },
   {
