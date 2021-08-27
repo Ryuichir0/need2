@@ -2,7 +2,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 220px;
+  width: 240px;
   height: 320px;
   border-radius: 20px;
   margin: 10px 0;
@@ -18,7 +18,6 @@
 }
 
 .card-index h2 {
-  padding-top: 10px;
   font-size: 12px;
   font-weight: bold;
   margin: 0;
@@ -30,18 +29,33 @@
   opacity: .7;
   margin: 0;
 }
+.card-index-members {
+  font-family: "Noto Sans", "Helvetica", "sans-serif";
+  margin-top: 12px;
+  text-justify: auto;
+  #title{
+    font-family: "Noto Sans", "Helvetica", "sans-serif";
+    font-size: 14px;
+    color:black;
+    margin-bottom: 5px;
+    font-weight: bold;
+    padding: 0 5px;
+  }
+  #desc {
+    font-family: "Noto Sans", "Helvetica", "sans-serif";
+    padding: 0 5px;
+    margin-top: 10px;
+    font-size: 12px;
+    height: 70px;
+  }
 
-.card-index .card-index-infos {
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
 }
 
-.card-index-infos .card-index-user {
+.card-index-members > .card-index-user {
+  object-fit: cover;
   position: absolute;
   right: 5px;
-  top: -20px;
+  top: -60px;
   width: 40px;
+  height: 40px;
 }
