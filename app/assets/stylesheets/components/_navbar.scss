@@ -49,3 +49,21 @@
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
+
+.dropdown-item1 {
+  border: 1px solid #0e1116;
+  border-radius: 5px;
+  text-decoration: none;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.100);
+  line-height: 65px;
+  font-size: 16px;
+  margin: 2px;
+  height: 65px;
+  display: flex;
+  margin: 0 20px 0 0;
+
+  position: relative;
+  display: inline-block;
+  user-select: none;
+  vertical-align: middle;
+}
