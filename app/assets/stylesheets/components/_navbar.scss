@@ -63,3 +63,13 @@
   color: black;
   position: relative;
 }
+
+
+.nav-link {
+  padding: 8px 24px;
+  border-radius: 8px;
+  background: linear-gradient(#71C9CE, #00f2ff);
+  // transition: background 0.3s ease;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  // box-shadow: 0 2px 25px rgba(255, 255, 255, 0.651);
+}
