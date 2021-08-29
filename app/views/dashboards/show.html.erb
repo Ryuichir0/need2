@@ -11,10 +11,10 @@
     </div>
   </div>
 </div>
-<div class="container"> 
+<div class="container">
   <div class="card-index-infos">
-      <div id="need"><h2>Mes demandes d'aides / </h2></div>
-      <div id="help"><h2>Mes offres d'aides </h2></div>
+      <div id="need"><h2>Mes demandes d'aides /</h2></div>
+      <div id="help"><h2>Mes propositions d'aides </h2></div>
   </div>
 
     <div class="list">
@@ -25,7 +25,7 @@
       <div class="product-list" id="div_need" >
       <h2> JE DEMANDE DU SOUTIEN : </h2>
       <% current_user.missions.each do |mission| %>
-          <div class="mt-2 product-card">
+          <div class="mt-4 p-2 product-card">
             <div class="info">
               <p> <%= mission.description %></p>
               <!--<p>statut</p> -->
@@ -33,12 +33,12 @@
             <div class="date">
               <%= Date.parse(mission.started_ad.to_s) %>
             </div>
-            <p class="user"><%= mission.user.first_name %> </p>
+            <%# <p class="user"><%= mission.user.first_name %>
           </div>
       <% end %>
       </div>
       <div id="div_help" class="d-none product-list">
-        <h2> JE PORTE SOUTIEN :</h2>
+        <h2> JE PROPOSE MON AIDE À :</h2>
         <% current_user.helps.each do |help| %>
             <div class="mt-2 product-card">
               <%= cl_image_tag help.mission.user.avatar.key, class: "avatar-card" %>
