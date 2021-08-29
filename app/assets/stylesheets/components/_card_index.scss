@@ -1,11 +1,19 @@
 .card-index {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 240px;
+  // overflow: hidden;
+  // background: white;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // width: 240px;
+  // height: 340px;
+  // border-radius: 8px;
+  // margin: 10px 0;
+
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.100);
   height: 340px;
-  border-radius: 20px;
-  margin: 10px 0;
+  margin: 16px 8px;
+  overflow: hidden;
+  width: 240px;
 }
 .card-index:hover {
   transform: scale(1.1);
@@ -50,4 +58,3 @@
   }
 
 }
-
