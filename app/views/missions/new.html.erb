@@ -17,8 +17,14 @@
     <div class="field">
       <%= f.input :address %>
     </div>
+
+     <div class="field">
+      <%= f.association :category, collection: Category.all %> 
+    </div>
+
     <div class="actions">
       <%= f.submit "Créer une demande", class: "button-validate" %>
     </div>
+    
   <% end %>
 </div>
