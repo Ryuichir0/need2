@@ -205,9 +205,11 @@ puts "creation category"
 category_list = []
 categories.each do |category|
   puts "category #{increment}"
-  category = Category.create!(
+  category = Category.new(
     name: category[:name]
   )
+  category.photo.attach(io: File.open("app/assets/images/category/#{category[:name].parameterize.underscore}.png"), filename: "#{category[:name].parameterize.underscore}.png", content_type:'image/png')
+  category.save!
   category_list << category
   increment += 1
 end
@@ -237,18 +239,15 @@ puts 'Creating 6 fakes missions '
 
 missions.each do |mission|
   puts "mission #{increment}"
-  name = mission[:slug]
-  mission = Mission.new(
+  mission = Mission.create!(
     description: mission[:description],
     started_ad: DateTime.parse(mission[:started_ad]),
     finished_at: DateTime.parse(mission[:finished_at]),
     address: mission[:address],
     user: user_list[mission[:user_id] - 1],
-    category: category_list[mission[:category_id] - 1],
+    category_id: category_list[mission[:category_id] - 1].id,
   )
   increment += 1
-  mission.photo_category.attach(io: File.open("app/assets/images/category/aide_#{name}.png"), filename: "#{name}.png", content_type:'image/png')
-  mission.save!
 end
 puts "Missions Created"
 
