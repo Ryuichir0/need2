@@ -10,9 +10,13 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
+  box-shadow: 0 5px 5px rgba(119, 115, 115, 0.8);
 }
+
+.avatar-bordered::after{
+  background-image: linear-gradient(rgba(255, 255, 255, 0) 0, black, 100%);
+}
+
 
 .avatar-bordered-dashboard {
   object-fit: cover;
