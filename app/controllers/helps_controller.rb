@@ -25,7 +25,17 @@ class HelpsController < ApplicationController
     redirect_to dashboard_path
   end
 
-private 
+  def confirm
+    @help = Help.find(params[:help_id])
+    @help.status = "confirmed"
+    if @help.save
+      redirect_to dashboard_path
+    else
+      redirect_to missions_path
+    end
+  end
+
+private
 
   def help_params
     params.require(:help).permit(:user_id, :mission_id)

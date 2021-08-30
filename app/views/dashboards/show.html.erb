@@ -4,10 +4,10 @@
   </div>
   <div class="user-info">
     <div class="p-3 pt-4 user-info-content">
-        <h2>pseudo : <%= current_user.pseudo %>  <!-- <i class="fas fa-pen"></i>--></h2>
-        <h2>Prénom : <%= current_user.first_name %> <!-- <i class="fas fa-pen"></i>--></h2>
-        <h2>Nom de famille : <%= current_user.last_name %> <!-- <i class="fas fa-pen"></i>--></h2>
-        <h2>Adresse : <%= current_user.address %><!-- <i class="fas fa-pen"></i>--></h2>
+        <h2><%= current_user.pseudo %>  <!-- <i class="fas fa-pen"></i>--></h2>
+        <h2><%= current_user.first_name %> <!-- <i class="fas fa-pen"></i>--></h2>
+        <h2><%= current_user.last_name %> <!-- <i class="fas fa-pen"></i>--></h2>
+        <h2><%= current_user.address %><!-- <i class="fas fa-pen"></i>--></h2>
     </div>
   </div>
 </div>
@@ -25,6 +25,7 @@
       <div class="product-list" id="div_need" >
       <h2> JE DEMANDE DU SOUTIEN : </h2>
       <% current_user.missions.each do |mission| %>
+      <%= link_to mission_path(mission), :action => 'go' do %>
           <div class="mt-4 p-2 product-card">
             <div class="info">
               <p> <%= mission.description %></p>
@@ -34,7 +35,13 @@
               <%= Date.parse(mission.started_ad.to_s) %>
             </div>
             <%# <p class="user"><%= mission.user.first_name %>
+            <% mission.helps.each do |help| %>
+              <% if help.status == "confirmed" %>
+                <%= help.user.first_name %>
+              <% end %>
+            <% end %>
           </div>
+      <% end %>
       <% end %>
       </div>
       <div id="div_help" class="d-none product-list">
@@ -44,6 +51,7 @@
               <%= cl_image_tag help.mission.user.avatar.key, class: "avatar-card" %>
               <div class="info">
                 <p> <%= help.mission.description %></p>
+
                 <p>statut</p>
               </div>
               <div class="date">

@@ -2,17 +2,17 @@
     <div class="wrapper">
         <div class="grid">
             <% @missions.each do |mission| %>
-                <%= link_to mission_path(mission), :action => 'go' do %>
-                    <div class="card-index">
-                        <%= cl_image_tag mission.photo_category.key %>
-                        <div class="card-index-members">
-                            <div>
-                                <p id="title"><%= mission.category.name %></p>
-                                <p id="desc"><%= mission.description %> </p>
-                            </div>
-                        </div>
-                    </div>
-                <% end %>
+              <%= link_to mission_path(mission), :action => 'go' do %>
+                  <div class="card-index">
+                      <%= cl_image_tag mission.photo_category.key %>
+                      <div class="card-index-members">
+                          <div>
+                              <p id="title"><%= mission.category.name %></p>
+                              <p id="desc"><%= mission.description %> </p>
+                          </div>
+                      </div>
+                  </div>
+              <% end %>
             <% end %>
         </div>
 

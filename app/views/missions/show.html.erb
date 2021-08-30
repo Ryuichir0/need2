@@ -18,10 +18,22 @@
       </div>
     </div>
     <% if current_user != @mission.user %>
-    <%= button_to "Candidater", mission_helps_path(@mission), :class => "button-validate" %>
+      <%= button_to "Candidater", mission_helps_path(@mission), :class => "button-validate" %>
+    <% else %>
+    <div class="form-container">
+      <%= form_with url: confirm_help_path(mission_id: @mission.id) do |form| %>
+        <% @mission.helps.each do |help| %>
+          <% help.id %>
+          <%=  help.user.first_name %>
+          <%= cl_image_tag help.user.avatar.key, class: "avatar-large", alt: "avatar-large" %>
+          <%= form.radio_button(:help_id, help.id)%>
+        <% end %>
+        <%= form.submit "Confirmer", class: "button btn-flat"  %>
+      <% end %>
+    </div>
     <% end %>
   </div>
    <div class="d-none border content-show-review">
-      <%= @mission.user.rating_as_helpee.floor(2) %>
+      <%#= @mission.user.rating_as_helpee.floor(2) %>
   </div>
 </div>
