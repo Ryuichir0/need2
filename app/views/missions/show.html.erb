@@ -1,7 +1,7 @@
 <div class="container1">
   <div class="content-show">
   <div class="content-category">
-      <%= cl_image_tag @mission.photo_category.key %> 
+      <%= cl_image_tag @mission.photo_category.key %>
   </div>
   <div class="border content-show-description">
           <h3> Description :</h3>
@@ -10,18 +10,18 @@
 </div>
 
   <div class="content-show-profil d-flex align-items-center justify-content-between ">
-    <div class="content-show-profil-left">
+    <div class="content-show-profil-left m-1 p-4">
       <%= cl_image_tag @mission.user.avatar.key, class: "avatar-large", alt: "avatar-large" %>
-      <div class = "content-show-profil-left-text">
+      <div class = "content-show-profil-left-text m-1 p-1">
         <p> Annonce créé par <%= @mission.user.first_name.capitalize %></p>
         <p> Membre depuis : <%= Date.parse(@mission.user.created_at.to_s)%> </p>
       </div>
     </div>
     <% if current_user != @mission.user %>
-    <%= button_to "Réserver", mission_helps_path(@mission), :class => "button-validate" %>
+    <%= button_to "Candidater", mission_helps_path(@mission), :class => "button-validate" %>
     <% end %>
   </div>
    <div class="d-none border content-show-review">
-      <%= @mission.user.rating_as_helpee.floor(2) %> 
+      <%= @mission.user.rating_as_helpee.floor(2) %>
   </div>
 </div>
