@@ -11,7 +11,6 @@
           <h2><%= current_user.last_name %> <!-- <i class="fas fa-pen"></i>--></h2>
           <h2><%= current_user.address %><!-- <i class="fas fa-pen"></i>--></h2>
       </div>
-    </div>
   </div>
 </div>
 <div class="contain-data">
@@ -30,6 +29,7 @@
     </div>
       <div class="product-list" id="div_need" >
       <% current_user.missions.each do |mission| %>
+      <%= link_to mission_path(mission), :action => 'go' do %>
           <div class="mt-4 p-2 product-card">
             <div class="info">
               <p> <%= mission.description %></p>
@@ -39,7 +39,13 @@
               <%= Date.parse(mission.started_ad.to_s) %>
             </div>
             <%# <p class="user"><%= mission.user.first_name %>
+            <% mission.helps.each do |help| %>
+              <% if help.status == "confirmed" %>
+                <%= help.user.first_name %>
+              <% end %>
+            <% end %>
           </div>
+      <% end %>
       <% end %>
       </div>
       <div id="div_help" class="product-list d-none">
@@ -48,6 +54,7 @@
               <%= cl_image_tag help.mission.user.avatar.key, class: "avatar-card" %>
               <div class="info">
                 <p> <%= help.mission.description %></p>
+
                 <p>statut</p>
               </div>
               <div class="date">

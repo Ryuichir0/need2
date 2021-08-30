@@ -3,9 +3,8 @@ class Mission < ApplicationRecord
   belongs_to :category
 
   has_many :helps
-  has_one_attached :photo_category
 
-   geocoded_by :address
+  geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
   include PgSearch::Model
@@ -14,4 +13,10 @@ class Mission < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+  scope :pending, -> {
+    includes(:helps).where.not(helps:{status:"confirmed"}).or(Mission.includes(:helps).where(helps: {id: nil}))
+  }
+
+
 end
