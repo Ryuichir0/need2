@@ -49,3 +49,27 @@
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
+
+.dropdown-item1 {
+  border: 1px solid #0e1116;
+  border-radius: 5px;
+  text-decoration: none;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.100);
+  line-height: 65px;
+  font-size: 16px;
+  height: 65px;
+  // display: flex;
+  margin: 0 20px 0 0;
+  color: black;
+  position: relative;
+}
+
+
+.nav-link {
+  padding: 8px 24px;
+  border-radius: 8px;
+  background: linear-gradient(#71C9CE, #00f2ff);
+  // transition: background 0.3s ease;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  // box-shadow: 0 2px 25px rgba(255, 255, 255, 0.651);
+}
