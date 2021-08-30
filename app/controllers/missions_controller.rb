@@ -27,7 +27,8 @@ class MissionsController < ApplicationController
   def create
     @mission = Mission.new(mission_params)
     @mission.user = current_user
-    if @mission.save
+    category = params[:category_id]
+    if @mission.save!
       redirect_to missions_path
     else
       render :new
@@ -54,6 +55,6 @@ class MissionsController < ApplicationController
   private
 
   def mission_params
-    params.require(:mission).permit(:description, :started_at, :finished_at, :user_id, :photo_category)
+    params.require(:mission).permit(:description, :started_ad, :finished_at, :user_id, :address, :category_id)
   end
 end
