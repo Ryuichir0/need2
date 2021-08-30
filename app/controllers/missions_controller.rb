@@ -3,10 +3,11 @@ class MissionsController < ApplicationController
 
   def index
     if params[:query] && params[:query] != ""
-      @missions = Mission.search_by_address(params[:query])
+      missions = Mission.search_by_address(params[:query])
     else
-      @missions = Mission.all
+      missions = Mission.all
     end
+    @missions = missions.pending
     @markers = @missions.geocoded.map do |mission|
       {
         lat: mission.latitude,
