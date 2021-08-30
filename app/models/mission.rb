@@ -3,7 +3,6 @@ class Mission < ApplicationRecord
   belongs_to :category
 
   has_many :helps
-  has_one_attached :photo_category
 
    geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
@@ -14,4 +13,6 @@ class Mission < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+ 
 end

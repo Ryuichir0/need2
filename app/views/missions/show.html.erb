@@ -1,12 +1,12 @@
 <!-- app/views/offers/show.html.erb -->
 <% content_for :meta_title, "#{@mission.category.name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @mission.description %>
-<% content_for :meta_image, cl_image_path(@mission.photo_category.key) %>
+<% content_for :meta_image, cl_image_path(@mission.category.photo.key) %>
 
 <div class="container1">
   <div class="content-show">
   <div class="content-category">
-      <%= cl_image_tag @mission.photo_category.key %> 
+      <%= cl_image_tag @mission.category.photo.key %> 
   </div>
   <div class="border content-show-description">
           <h3> Description :</h3>
