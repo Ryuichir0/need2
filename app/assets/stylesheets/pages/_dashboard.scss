@@ -1,16 +1,22 @@
+.contain-user-card{
+display: flex;
+justify-content: center;
+}
+
+
 .user-card {
   display: flex;
   align-items: center;
   justify-content: space-around;
   margin: 0 100px;
+  width: 900px;
 }
 .user-info{
-  border: 1px solid black;
   background-color: $user;
   border-radius: 20px;
   color: $user-font;
   flex-grow: 1;
-  
+
   vertical-align: center;
   margin-left:40px;
   padding: 20px;
@@ -24,12 +30,15 @@
 margin:15px;
 }
 
+.contain-data{
+
+  display: flex;
+}
+
 .card-index-infos{
   border-radius: 30px;
-  display: flex;
   justify-content: center;
-  margin: 40px auto;
-  text-align: center;
+  margin: 40px;
 }
 #help:hover{
   color: red;

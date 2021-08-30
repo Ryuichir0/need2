@@ -1,29 +1,30 @@
-<div class="user-card">
-  <div>
-  <%= cl_image_tag current_user.avatar.key, :class => "avatar-bordered"%>
-  </div>
-  <div class="user-info">
-    <div class="p-3 pt-4 user-info-content">
-        <h2>pseudo : <%= current_user.pseudo %>  <!-- <i class="fas fa-pen"></i>--></h2>
-        <h2>Prénom : <%= current_user.first_name %> <!-- <i class="fas fa-pen"></i>--></h2>
-        <h2>Nom de famille : <%= current_user.last_name %> <!-- <i class="fas fa-pen"></i>--></h2>
-        <h2>Adresse : <%= current_user.address %><!-- <i class="fas fa-pen"></i>--></h2>
+<div class="contain-user-card">
+  <div class="user-card">
+    <div>
+    <!--cl_image_tag current_user.avatar.key-->
+    <%= image_tag ('user5.jpg'), :class => "avatar-bordered"%>
+    </div>
+    <div class="user-info">
+      <div class="p-3 pt-4 user-info-content">
+          <h2><%= current_user.pseudo %>  <!-- <i class="fas fa-pen"></i>--></h2>
+          <h2><%= current_user.first_name %> <!-- <i class="fas fa-pen"></i>--></h2>
+          <h2><%= current_user.last_name %> <!-- <i class="fas fa-pen"></i>--></h2>
+          <h2><%= current_user.address %><!-- <i class="fas fa-pen"></i>--></h2>
+      </div>
     </div>
   </div>
 </div>
-<div class="container">
+<div class="contain-data">
   <div class="card-index-infos">
-      <div id="need"><h2>Mes demandes d'aides /</h2></div>
-      <div id="help"><h2>Mes propositions d'aides </h2></div>
+      <h2>Mes requêtes</h2>
+      <h2>Mes offres</h2>
   </div>
-
     <div class="list">
       <div class="search-bar w-50 ml-2">
         <!-- commentaire particulier  <p class="border">Find a mission + zoom icon <i class="fas fa-search"></i></p>-->
       </div>
     </div>
       <div class="product-list" id="div_need" >
-      <h2> JE DEMANDE DU SOUTIEN : </h2>
       <% current_user.missions.each do |mission| %>
           <div class="mt-4 p-2 product-card">
             <div class="info">
