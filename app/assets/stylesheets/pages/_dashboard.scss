@@ -3,6 +3,21 @@ display: flex;
 justify-content: center;
 }
 
+.caret{
+  display:flex;
+}
+
+#need {
+font-size:35px;
+margin-left:20px;
+}
+
+#help{
+font-size:35px;
+margin-left:45px;
+}
+
+
 
 .user-card {
   display: flex;
