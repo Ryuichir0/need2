@@ -1,7 +1,7 @@
 <div class="container">
   <div class="user-card">
     <div>
-    <!---->
+    <!--cl_image_tag current_user.avatar.key-->
     <%= cl_image_tag current_user.avatar.key, :class => "avatar-bordered"%>
     </div>
     <div class="user-info">
@@ -53,16 +53,26 @@
       <p>Help</p>
         <% current_user.helps.each do |help| %>
             <div class="mt-2 product-card">
-              <%= cl_image_tag help.mission.user.avatar.key, class: "avatar-card" %>
+              <div class="border ">
+                <%= cl_image_tag help.mission.user.avatar.key, class: "avatar-card" %>
+                <p class="user"><%= help.mission.user.first_name %> </p>
+              </div>
               <div class="info">
                 <p> <%= help.mission.description %></p>
 
-                <p>statut</p>
+              <div class="status">
+                <% if help.status == "pending" %>
+                  <label for="file"> En attente: </label>
+                  <progress id="file" max="100" value="50"> 50% </progress>
+                <% else %>
+                  <label for="file"> Validé: </label>
+                  <progress id="file" max="100" value="100"> 100% </progress>
+                <%end %>
+              </div>
               </div>
               <div class="date">
                 <%= Date.parse(help.mission.started_ad.to_s) %>
               </div>
-              <p class="user"><%= help.mission.user.first_name %> </p>
             </div>
         <% end %>
         </div>

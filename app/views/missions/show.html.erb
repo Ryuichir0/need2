@@ -13,9 +13,9 @@
             <p> <%= @mission.description %></p>
     </div>
     <div class="content-show-rating">
-            <h4> Note de <%=@mission.user.first_name %> <%= @mission.user.rating_as_helpee.floor(2) %>/5 </h4>
+            <h4> Note de <%=@mission.user.first_name %> /5 </h4>
             <div class="content-show-review"> 
-            <% @mission.user.review_for_helpee.last(4).split(",").each do |review| %>
+                <% @mission.user.review_for_helpee.last(4).split(",").each do |review| %>
                 <div class=" content-review"><p><strong><%=review[3]%></strong></p></div>
                 <div class=" content-review"><p><strong><%=review[2]%></strong></p></div>
                 <div class=" content-review"><p><p><strong><%=review[1]%></strong></p></div>
@@ -50,7 +50,5 @@
     </div>
     <% end %>
   </div>
-   <div class="d-none border content-show-review">
-      <%#=  %>
-  </div>
+
 </div>
