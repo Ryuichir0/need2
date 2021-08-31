@@ -18,5 +18,7 @@ class Mission < ApplicationRecord
     includes(:helps).where.not(helps:{status:"confirmed"}).or(Mission.includes(:helps).where(helps: {id: nil}))
   }
 
-
+ scope :filter_by_category, -> (category_id) {
+   where(category_id: category_id)
+  }
 end

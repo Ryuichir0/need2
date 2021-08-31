@@ -1,4 +1,12 @@
+<%= form_tag missions_path, method: :get do %>
+  <%= select_tag :category, options_for_select(Category.all.pluck(:name, :id), params[:category]), onchange: "this.form.submit()" %>
+<% end %>
+
+
+  </div>
+
 <div class="bg-light">
+
     <div class="wrapper">
         <div class="grid">
             <% @missions.each do |mission| %>
