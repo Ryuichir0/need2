@@ -13,8 +13,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'faker'
-require 'open-uri'
 
 Category.destroy_all
 Help.destroy_all
@@ -245,6 +243,7 @@ end
 increment = 1
 puts 'Creating 6 fakes missions '
 
+mission_list = []
 missions.each do |mission|
   puts "mission #{increment}"
   mission = Mission.create!(
@@ -255,22 +254,24 @@ missions.each do |mission|
     user: user_list[mission[:user_id] - 1],
     category_id: category_list[mission[:category_id] - 1].id,
   )
+  mission_list << mission
   increment += 1
 end
 puts "Missions Created"
 
 increment = 1
-# helps.each do |help|
-#   puts "help #{increment}"
-#   help = Help.create(
-#     helpee_review: help[:helpee_review],
-#     helpee_rating: help[:helpee_rating],
-#     helper_review: help[:helper_review],
-#     helper_rating: help[:helper_rating],
-#     user_id: help[:user_id],
-#     mission_id: help[:mission_id]
-#   )
-#   increment += 1
-#end
+ helps.each do |help|
+   puts "help #{increment}"
+   help = Help.new(
+     helpee_review: help[:helpee_review],
+     helpee_rating: help[:helpee_rating],
+     helper_review: help[:helper_review],
+     helper_rating: help[:helper_rating],
+     user: user_list[help[:user_id] - 1],
+     mission_id: mission_list[help[:mission_id]- 1].id,
+   )
+   help.save!
+   increment += 1
+end
 puts "helps Created"
 puts "all is ok"

@@ -50,31 +50,48 @@
       <% end %>
       <% end %>
       </div>
-      <div id="div_help" class="product-list d-none">
-      <p>Help</p>
-        <% current_user.helps.each do |help| %>
-            <div class="mt-2 product-card">
-              <div class="border ">
-                <%= cl_image_tag help.mission.user.avatar.key, class: "avatar-card" %>
-                <p class="user"><%= help.mission.user.first_name %> </p>
+        <div id="div_help" class="product-list d-none">
+        <p>Help</p>
+          <% current_user.helps.each do |help| %>
+              <div class="mt-2 product-card">
+                <div class="">
+                  <%= cl_image_tag help.mission.user.avatar.key, class: "avatar-card" %>
+                  <p class="user"><%= help.mission.user.first_name %> </p>
+                </div>
+                <div class="info">
+                  <p> <%= help.mission.description %></p>
+                <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <% if help.status == "pending" %>
+                      <label for="file"> En attente: </label>
+                      <progress id="file" max="100" value="50"> 50% </progress>
+                    <% else %>
+                      <label for="file"> Validé: </label>
+                      <progress id="file" max="100" value="100"> 100% </progress>
+                    <%end %>
+                   </div>
+                    <div id="btn-dashboard" class = "button-dashboard w-25 btn- btn-flat" >Ajouter un commentaire</div>
+                    <div id="div_review" class="d-none">
+                    <%= simple_form_for [ help ] do |f| %>
+                        <div class="field">
+                          <%= f.label :helpee_review, label: "Ecrire votre commentaire"%><br>
+                          <%= f.text_area :helpee_review, class: "form-control" %>
+                        </div>
+                        <div class="field">
+                          <%= f.label :helpee_rating, label: "Donner une note entre 1 et 5"%><br>
+                          <%= f.input :helpee_rating, class: "form-control",label: false %>
+                        </div>
+                        <div class="actions">
+                          <%= f.submit "Valider le commentaire", class: "button btn-flat" %>
+                        </div>
+                    <% end %>
+                   </div>
+                </div>
+                </div>
+                <div class="date">
+                  <%= Date.parse(help.mission.started_ad.to_s).strftime("%d/%m/%Y %X")%>
+                </div>
               </div>
-              <div class="info">
-                <p> <%= help.mission.description %></p>
-
-              <div class="status">
-                <% if help.status == "pending" %>
-                  <label for="file"> En attente: </label>
-                  <progress id="file" max="100" value="50"> 50% </progress>
-                <% else %>
-                  <label for="file"> Validé: </label>
-                  <progress id="file" max="100" value="100"> 100% </progress>
-                <%end %>
-              </div>
-              </div>
-              <div class="date">
-                <%= Date.parse(help.mission.started_ad.to_s) %>
-              </div>
-            </div>
         <% end %>
         </div>
 </div>

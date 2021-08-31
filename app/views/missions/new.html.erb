@@ -2,23 +2,23 @@
   <h2>Création d'une nouvelle demande d'aide </h2>
   <%= simple_form_for [ @mission ] do |f| %>
     <div class="field">
-      <%= f.label :description %><br>
-      <%= f.text_area :description, class: "form-control" %>
+      <%= f.label :description, label: "Description" %>
+      <%= f.text_area :description, class: "form-control", label: "Description"%>
     </div>
 
     <div class="field">
-      <%= f.input :started_ad, as: :datetime %>
+      <%= f.input :started_ad, as: :datetime, label: "Date de début" %>
     </div>
 
     <div class="field">
-      <%= f.input :finished_at, as: :datetime %>
+      <%= f.input :finished_at, as: :datetime, label: "Date de fin"%>
     </div>
 
     <div class="field">
-      <%= f.input :address %>
+      <%= f.input :address, label: "Addresse"%>
     </div>
      <div class="field">
-      <%= f.association :category, collection: Category.all %> 
+      <%= f.association :category, collection: Category.all, label: "Choisir votre catégorie" %> 
     </div>
 
     <div class="actions">
