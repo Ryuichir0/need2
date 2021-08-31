@@ -4,51 +4,50 @@
 <% content_for :meta_image, cl_image_path(@mission.category.photo.key) %>
 <div class="container">
   <div class="content-show">
-  <div class="content-category">
-      <%= cl_image_tag @mission.category.photo.key %> 
-  </div>
-  <div class="content-show-right">
-    <div class="content-show-description">
-            <h3> Description :</h3>
-            <p> <%= @mission.description %></p>
+    <div class="content-category">
+        <%= cl_image_tag @mission.category.photo.key %> 
     </div>
-    <div class="content-show-rating">
-            <h4> Note de <%=@mission.user.first_name %> /5 </h4>
-            <div class="content-show-review"> 
-                <% @mission.user.review_for_helpee.last(4).split(",").each do |review| %>
-                <div class=" content-review"><p><strong><%=review[3]%></strong></p></div>
-                <div class=" content-review"><p><strong><%=review[2]%></strong></p></div>
-                <div class=" content-review"><p><p><strong><%=review[1]%></strong></p></div>
-                <div class=" content-review"><p><strong><%=review[0]%></strong></p></div>
-            </div>
-            <% end %>
-    </div>
-  </div>
-</div>
-
-  <div class="content-show-profil d-flex align-items-center justify-content-between ">
-    <div class="content-show-profil-left">
-      <%= cl_image_tag @mission.user.avatar.key, class: "avatar-large", alt: "avatar-large" %>
-      <div class = "content-show-profil-left-text m-1 p-1">
-        <p> Annonce créé par <%= @mission.user.first_name.capitalize %></p>
-        <p> Membre depuis : <%= Date.parse(@mission.user.created_at.to_s)%> </p>
+    <div class="content-show-right">
+      <div class="content-show-description">
+              <h3> Description :</h3>
+              <p> <%= @mission.description %></p>
+      </div>
+      <div class="content-show-rating">
+              <h4> Note de <%=@mission.user.first_name %> <%= @mission.user.rating_as_helpee.floor(2) %> /5 </h4>
+              <div class="content-show-review"> 
+                  <% @mission.user.review_for_helpee.last(4).split(",").each do |review| %>
+                    <div class=" content-review "><p><i class="fas fa-quote-right"></i><strong><%=review[3]%></strong></p></div>
+                    <div class=" content-review pl-1"><p><i class="fas fa-quote-right"></i><strong><%=review[2]%></strong></p></div>
+                    <div class=" content-review pl-1"><p><i class="fas fa-quote-right"></i><p><strong><%=review[1]%></strong></p></div>
+                    <div class=" content-review pl-1"><p><i class="fas fa-quote-right"></i><strong><%=review[0]%></strong></p></div>
+                  <% end %>
+              </div>
       </div>
     </div>
-    <% if current_user != @mission.user %>
-      <%= button_to "Candidater", mission_helps_path(@mission), :class => "button-validate" %>
-    <% else %>
-    <div class="form-container">
-      <%= form_with url: confirm_help_path(mission_id: @mission.id) do |form| %>
-        <% @mission.helps.each do |help| %>
-          <% help.id %>
-          <%=  help.user.first_name %>
-          <%= form.radio_button(:help_id, help.id)%>
-          <%= cl_image_tag help.user.avatar.key, class: "avatar-large", alt: "avatar-large" %>
+  </div>
+    <div class="content-show-profil d-flex align-items-center justify-content-between ">
+      <div class="content-show-profil-left">
+        <%= cl_image_tag @mission.user.avatar.key, class: "avatar-large", alt: "avatar-large" %>
+        <div class = "content-show-profil-left-text m-1 p-1">
+          <p> Annonce créée par <%= @mission.user.first_name.capitalize %></p>
+          <p> Membre depuis : <%= Date.parse(@mission.user.created_at.to_s).strftime("%d/%m/%Y") %>
+        </div>
+      </div>
+      <% if current_user != @mission.user %>
+        <%= button_to "Candidater", mission_helps_path(@mission), :class => "button-validate" %>
+      <% else %>
+      <div class="form-container">
+        <%= form_with url: confirm_help_path(mission_id: @mission.id) do |form| %>
+          <% @mission.helps.each do |help| %>
+            <% help.id %>
+            <%=  help.user.first_name %>
+            <%= form.radio_button(:help_id, help.id)%>
+            <%= cl_image_tag help.user.avatar.key, class: "avatar-large", alt: "avatar-large" %>
+          <% end %>
+          <%= form.submit "Confirmer", class: "button btn-flat"  %>
         <% end %>
-        <%= form.submit "Confirmer", class: "button btn-flat"  %>
+      </div>
       <% end %>
-    </div>
-    <% end %>
   </div>
 
 </div>

@@ -35,10 +35,21 @@ class HelpsController < ApplicationController
     end
   end
 
+  def update
+    @help = Help.find(params[:id])
+    if @help.update(help_review_params)
+      redirect_to dashboard_path
+    else
+      redirect_to missions_path
+    end
+  end
 private
 
   def help_params
     params.require(:help).permit(:user_id, :mission_id)
+  end
+  def help_review_params
+    params.require(:help).permit(:helpee_review, :helpee_rating)
   end
 
   def set_mission
