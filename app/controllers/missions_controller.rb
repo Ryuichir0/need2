@@ -15,7 +15,8 @@ class MissionsController < ApplicationController
       {
         lat: mission.latitude,
         lng: mission.longitude,
-        info_window: render_to_string(partial: "info_windows", locals: { mission: mission })
+        info_window: render_to_string(partial: "info_windows", locals: { mission: mission }),
+        avatar: Cloudinary::Utils.cloudinary_url(mission.user.avatar.key)
       }
     end
   end
