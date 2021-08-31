@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/:pseudo', to: "users#show"
+  get 'user/:pseudo', to: "users#show"
   get 'categories/index'
   devise_for :users
   root to: 'pages#home'

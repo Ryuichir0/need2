@@ -7,6 +7,9 @@ class MissionsController < ApplicationController
     else
       missions = Mission.all
     end
+    if params[:category].present?
+      missions = missions.filter_by_category(params[:category])
+    end
     @missions = missions.pending
     @markers = @missions.geocoded.map do |mission|
       {
