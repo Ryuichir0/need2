@@ -75,3 +75,10 @@
   transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
   // box-shadow: 0 2px 25px rgba(255, 255, 255, 0.651);
 }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color:white;
+}
