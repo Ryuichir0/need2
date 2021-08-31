@@ -17,4 +17,8 @@ class User < ApplicationRecord
   def rating_as_helpee
     helps_as_helpee.pluck(:helpee_rating).sum / helps_as_helpee.count.to_f
   end
+
+  def review_for_helpee
+    helps_as_helpee.pluck(:helpee_review)
+  end
 end
