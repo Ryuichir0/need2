@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="user-card">
+    <div>
+    <!---->
+    <%= cl_image_tag @user.avatar.key, :class => "avatar-bordered"%>
+    </div>
+    <div class="user-info">
+      <div class="p-3 pt-4 user-info-content">
+          <h2><%= @user.pseudo %>  <!-- <i class="fas fa-pen"></i>--></h2>
+          <h2><%= @user.first_name %> <!-- <i class="fas fa-pen"></i>--></h2>
+          <h2><%= @user.last_name %> <!-- <i class="fas fa-pen"></i>--></h2>
+          <h2><%= @user.address %><!-- <i class="fas fa-pen"></i>--></h2>
+      </div>
+  </div>
+
+  <div class="content-show-rating">
+            <h4> Note de <%= @user.first_name %> <%= @user.rating_as_helpee.floor(2) %>/5 </h4>
+            <div class="content-show-review">
+            <% @user.review_for_helpee.last(4).split(",").each do |review| %>
+                <div class=" content-review"><p><strong><%=review[3]%></strong></p></div>
+                <div class=" content-review"><p><strong><%=review[2]%></strong></p></div>
+                <div class=" content-review"><p><p><strong><%=review[1]%></strong></p></div>
+                <div class=" content-review"><p><strong><%=review[0]%></strong></p></div>
+            </div>
+            <% end %>
+  </div>
+
+</div>
