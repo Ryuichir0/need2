@@ -15,8 +15,12 @@
 </div>
 <div class="contain-data">
   <div class="card-index-infos">
-      <h2 id="need">Mes requêtes</h2>
-      <h2 id="help">Mes offres</h2>
+  <div class="caret">
+      <h2 >Mes requêtes</h2><i class="fas fa-angle-right" id="need"></i>
+  </div>
+  <div class="caret">
+      <h2 >Mes offres </h2><i class="fas fa-angle-right" id="help"  ></i>
+  </div>
   </div>
     <div class="list">
       <div class="search-bar w-50 ml-2">
@@ -24,6 +28,7 @@
       </div>
     </div>
       <div class="product-list" id="div_need" >
+      <p>Need</p>
       <% current_user.missions.each do |mission| %>
       <%= link_to mission_path(mission), :action => 'go' do %>
           <div class="mt-4 p-2 product-card">
@@ -44,8 +49,8 @@
       <% end %>
       <% end %>
       </div>
-      <div id="div_help" class="d-none product-list">
-        <h2> JE PROPOSE MON AIDE À :</h2>
+      <div id="div_help" class="product-list d-none">
+      <p>Help</p>
         <% current_user.helps.each do |help| %>
             <div class="mt-2 product-card">
               <%= cl_image_tag help.mission.user.avatar.key, class: "avatar-card" %>

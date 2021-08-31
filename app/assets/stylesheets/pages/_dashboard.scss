@@ -1,3 +1,21 @@
+
+
+.caret{
+  display:flex;
+}
+
+#need {
+font-size:35px;
+margin-left:20px;
+}
+
+#help{
+font-size:35px;
+margin-left:45px;
+}
+
+
+
 .user-card {
   display: flex;
   align-items: center;
@@ -35,10 +53,10 @@ margin:15px;
   margin: 40px;
 }
 #help:hover{
-  color: red;
+  color:$user;
 }
 #need:hover{
-  color: blue;
+  color:$user;
 }
 .nav{
   background-color: $user-info;
