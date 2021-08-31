@@ -37,7 +37,7 @@
               <!--<p>statut</p> -->
             </div>
             <div class="date">
-              <%= Date.parse(mission.started_ad.to_s) %>
+              <%= Date.parse(mission.started_ad.to_s).strftime("%d/%m/%Y %X") %>
             </div>
             <%# <p class="user"><%= mission.user.first_name %>
             <% mission.helps.each do |help| %>
