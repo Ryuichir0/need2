@@ -2,7 +2,7 @@
   <div class="user-card">
     <div>
     <!--cl_image_tag current_user.avatar.key-->
-    <%= image_tag ('user5.jpg'), :class => "avatar-bordered"%>
+    <%= cl_image_tag current_user.avatar.key, :class => "avatar-bordered"%>
     </div>
     <div class="user-info">
       <div class="p-3 pt-4 user-info-content">
@@ -34,6 +34,7 @@
           <div class="mt-4 p-2 product-card">
             <div class="info">
               <p> <%= mission.description %></p>
+              <%= link_to icon("fas fa-info-circle", "Consulter"), "#", class: "info-candidat"%>
               <!--<p>statut</p> -->
             </div>
             <div class="date">
