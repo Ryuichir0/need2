@@ -172,6 +172,14 @@ helps = [
     helper_rating: 2,
     user_id: 2,
     mission_id: 1
+  },
+  {
+    helpee_review: " Très bonne journée passé en compagnie de vicky",
+    helpee_rating: 3,
+    helper_review: " Personne désagréable je ne recommande pas",
+    helper_rating: 2,
+    user_id: 2,
+    mission_id: 3
   }
 ]
 
@@ -263,6 +271,6 @@ increment = 1
 #     mission_id: help[:mission_id]
 #   )
 #   increment += 1
-# end
+#end
 puts "helps Created"
 puts "all is ok"
