@@ -1,8 +1,8 @@
-<div class="contain-user-card">
+<div class="container">
   <div class="user-card">
     <div>
-    <!--cl_image_tag current_user.avatar.key-->
-    <%= image_tag ('user5.jpg'), :class => "avatar-bordered"%>
+    <!---->
+    <%= cl_image_tag current_user.avatar.key, :class => "avatar-bordered"%>
     </div>
     <div class="user-info">
       <div class="p-3 pt-4 user-info-content">
@@ -15,8 +15,8 @@
 </div>
 <div class="contain-data">
   <div class="card-index-infos">
-      <h2>Mes requêtes</h2>
-      <h2>Mes offres</h2>
+      <h2 id="need">Mes requêtes</h2>
+      <h2 id="help">Mes offres</h2>
   </div>
     <div class="list">
       <div class="search-bar w-50 ml-2">
