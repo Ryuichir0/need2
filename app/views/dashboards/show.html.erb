@@ -28,6 +28,7 @@
       </div>
     </div>
       <div class="product-list" id="div_need" >
+      <p>Need</p>
       <% current_user.missions.each do |mission| %>
       <%= link_to mission_path(mission), :action => 'go' do %>
           <div class="mt-4 p-2 product-card">
@@ -49,6 +50,7 @@
       <% end %>
       </div>
       <div id="div_help" class="product-list d-none">
+      <p>Help</p>
         <% current_user.helps.each do |help| %>
             <div class="mt-2 product-card">
               <%= cl_image_tag help.mission.user.avatar.key, class: "avatar-card" %>

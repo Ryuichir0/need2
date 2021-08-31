@@ -1,7 +1,4 @@
-.contain-user-card{
-display: flex;
-justify-content: center;
-}
+
 
 .caret{
   display:flex;
@@ -56,10 +53,10 @@ margin:15px;
   margin: 40px;
 }
 #help:hover{
-  color: red;
+  color:$user;
 }
 #need:hover{
-  color: blue;
+  color:$user;
 }
 .nav{
   background-color: $user-info;
