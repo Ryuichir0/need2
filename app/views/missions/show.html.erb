@@ -39,10 +39,19 @@
       <div class="form-container">
         <%= form_with url: confirm_help_path(mission_id: @mission.id) do |form| %>
           <% @mission.helps.each do |help| %>
-            <% help.id %>
-            <%=  help.user.first_name %>
-            <%= form.radio_button(:help_id, help.id)%>
-            <%= cl_image_tag help.user.avatar.key, class: "avatar-large", alt: "avatar-large" %>
+            <div class="d-flex flex-row">
+              <div class="radio-box">
+                <%= label_tag "help_#{help.id}" do %>
+                  <%= radio_button_tag "help", help.id, false, class: "card-input-element d-none" %>
+                  <div class="card card-body bg-light d-flex flex-row justify-content-between align-items-center">
+                    <%=  help.user.first_name %>
+                  </div>
+                <% end %>
+              </div>
+                  <%= link_to user_path(help.user.pseudo) do %>
+                  <%= cl_image_tag help.user.avatar.key, class: "avatar-large", alt: "avatar-large" %>
+                  <% end %>
+            </div>
           <% end %>
           <%= form.submit "Confirmer", class: "button btn-flat"  %>
         <% end %>
