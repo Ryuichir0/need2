@@ -16,10 +16,10 @@
 <div class="contain-data">
   <div class="card-index-infos">
   <div class="caret">
-      <h2 id="requetes">Requêtes</h2><i class="fas fa-angle-right" id="need"></i>
+      <h2 id="need">Requêtes</h2><i class="fas fa-angle-right" id="need"></i>
   </div>
   <div class="caret">
-      <h2 id="offres">Offres </h2><i class="fas fa-angle-right" id="help"  ></i>
+      <h2 id="help">Offres </h2><i class="fas fa-angle-right" id="help"  ></i>
   </div>
   </div>
     <div class="list">
@@ -31,6 +31,15 @@
       <h2>Requêtes</h2>
       <% current_user.missions.each do |mission| %>
           <div class="mt-4 p-2 product-card">
+<<<<<<< HEAD
+            <div class="info">
+              <div class="date">
+                <%= (mission.started_ad).strftime("%d/%m/%Y %H:%M:%S") %>
+              </div>
+              <p> <%= mission.description %></p>
+              <%= link_to icon("fas fa-info-circle", "Consulter"), "#", class: "info-candidat"%>
+              <!--<p>statut</p> -->
+=======
             <div class="border info">
                 <p> <%= mission.description %></p>
             <div class= "border d-flex">
@@ -46,6 +55,7 @@
                 <div>
                 </div>
           </div>
+>>>>>>> e62a1934abe1b755c775ab4c538b17e94b9472df
             </div>
             <%# <p class="user"><%= mission.user.first_name %>
             <% mission.helps.each do |help| %>
@@ -58,7 +68,10 @@
       <% end %>
       </div>
         <div id="div_help" class="product-list d-none">
+<<<<<<< HEAD
+=======
         <h2>Demandes</h2>
+>>>>>>> e62a1934abe1b755c775ab4c538b17e94b9472df
           <% current_user.helps.each do |help| %>
               <div class="mt-2 product-card">
                 <div class="">
@@ -66,6 +79,9 @@
                   <p class="user"><%= help.mission.user.first_name %> </p>
                 </div>
                 <div class="info">
+                  <div class="date">
+                    <%= (help.mission.started_ad).strftime("%d/%m/%Y %X")%>
+                  </div>
                   <p> <%= help.mission.description %></p>
                 <div class="d-flex justify-content-between align-items-center">
                 <div>
@@ -81,7 +97,7 @@
                         <div id="btn-dashboard" class = "button-dashboard w-25 btn- btn-flat" >Ajouter un commentaire</div>
                           <div id="div_review" class="d-none">
                           <%= simple_form_for [ help ] do |f| %>
-            
+
                               <div class="field">
                                 <%= f.label :helpee_review, label: "Ecrire votre commentaire"%><br>
                                 <%= f.text_area :helpee_review, class: "form-control" %>
@@ -100,14 +116,14 @@
                               </div>
                           <% end %>
                         </div>
-                      <% end %>
+                        <div class="actions">
+                          <%= f.submit "Valider", class: "btn btn-flat" %>
+                        </div>
+                    <% end %>
+                   </div>
                 </div>
                 </div>
-                <div class="date">
-                  <%= Date.parse(help.mission.started_ad.to_s).strftime("%d/%m/%Y %T")%>
-                  <%= Date.parse(help.mission.finished_at.to_s).strftime("%d/%m/%Y %T")%>
-                </div>
-              </div>>
+              </div>
         <% end %>
         </div>
 </div>

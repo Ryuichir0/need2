@@ -1,40 +1,40 @@
-<div class="container m-auto my-4 p-4 shadow">
-  <div class="w-50 m-auto">
-    <h2>Création d'une nouvelle demande d'aide </h2>
-    <%= simple_form_for [ @mission ] do |f| %>
-      <div class="field">
-        <%= f.label :description, label: "Description" %>
-        <%= f.text_area :description, class: "form-control", label: "Description"%>
-      </div>
+<div class="container my-4 p-4 shadow">
+  <h2>Création d'une nouvelle demande d'aide </h2>
+  <%= simple_form_for [ @mission ] do |f| %>
+    <div class="field">
+      <%= f.label :description, label: "Description" %>
+      <%= f.text_area :description, class: "form-control", label: "Description"%>
+    </div>
 
-      <!-- <div class="field">
-        <%= f.input :started_ad, as: :datetime %>
-      </div> -->
-      <p>
-      </p>
+    <!-- <div class="field">
+      <%= f.input :started_ad, as: :datetime %>
+    </div> -->
+    <p>
+    </p>
 
-      <div class="field">
-        <%= f.input :started_ad, as: :string, class: "form-control", label: "Date de Début", input_html: { id: "flatpickr" } %>
-      </div>
+    <div class="field">
+      <%= f.input :started_ad, as: :string, label: "Début", class: "form-control", input_html: { id: "flatpickr" } %>
+    </div>
 
-      <!--<div class="field">
-        <%= f.input :finished_at, as: :datetime %>
-      </div> -->
+    <!--<div class="field">
+      <%= f.input :finished_at, as: :datetime %>
+    </div> -->
 
-      <div class="field">
-        <%= f.input :finished_at, as: :string, class: "form-control", label: "Date de Fin", input_html: { id: "flatpickr" } %>
-      </div>
+    <div class="field">
+      <%= f.input :finished_at, as: :string, label: "Fin", class: "form-control", input_html: { id: "flatpickr" } %>
+    </div>
 
-      <div class="field">
-        <%= f.input :address, label: "Addresse"%>
-      </div>
-      <div class="field">
-        <%= f.association :category, collection: Category.all, label: "Choisir votre catégorie" %>
-      </div>
+    <div class="field">
+      <%= f.input :address, label: "Addresse"%>
+    </div>
+     <div class="field">
+      <%= f.association :category, collection: Category.all, label: "Choisir votre catégorie" %>
+    </div>
 
-      <div class="actions">
-        <%= f.submit "Créer une demande", class: "button btn-flat" %>
-      </div>
-    <% end %>
-  </div>
+    <div class="actions">
+      <%= f.submit "Créer", class: "button btn-flat" %>
+    </div>
+
+  <% end %>
+
 </div>
