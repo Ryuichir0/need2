@@ -1,0 +1,22 @@
+.b-blue {
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  margin: 0px 0px 0px 20px;
+  border-radius: 8px;
+  background: linear-gradient(#71C9CE, #00f2ff);
+  // transition: background 0.3s ease;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 25px rgba(126, 216, 255, 0.651);
+  background: rgba(5,118,255,1);
+  background: -moz-linear-gradient(45deg, rgba(5,118,255,1) 0%, rgba(36,248,255,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(5,118,255,1)), color-stop(100%, rgba(36,248,255,1)));
+  background: -webkit-linear-gradient(45deg, rgba(5,118,255,1) 0%, rgba(36,248,255,1) 100%);
+  background: -o-linear-gradient(45deg, rgba(5,118,255,1) 0%, rgba(36,248,255,1) 100%);
+  background: -ms-linear-gradient(45deg, rgba(5,118,255,1) 0%, rgba(36,248,255,1) 100%);
+  background: linear-gradient(45deg, rgba(5,118,255,1) 0%, rgba(36,248,255,1) 100%);
+}
+
+.b-blue:hover {
+  background: #00eaff;
+  color: white;
+}
