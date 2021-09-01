@@ -4,13 +4,57 @@
     <!--cl_image_tag current_user.avatar.key-->
     <%= cl_image_tag current_user.avatar.key, :class => "avatar-bordered"%>
     </div>
-    <div class="user-info">
-      <div class="p-3 pt-4 user-info-content">
-          <h2><%= current_user.pseudo %>  <!-- <i class="fas fa-pen"></i>--></h2>
-          <h2><%= current_user.first_name %> <!-- <i class="fas fa-pen"></i>--></h2>
-          <h2><%= current_user.last_name %> <!-- <i class="fas fa-pen"></i>--></h2>
-          <h2><%= current_user.address %><!-- <i class="fas fa-pen"></i>--></h2>
-      </div>
+     <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <i class=" mb-0 fas fa-users"></i>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                       <h5><%= current_user.pseudo %></h5>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <i class=" mb-0 fas fa-user"></i>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <h5><%= current_user.first_name %></h5>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <i class=" mb-0 fas fa-user-tag"></i>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <h5><%= current_user.last_name %></h5>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <i class="mb-0 fas fa-address-card"></i>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <h5><%= current_user.phone %><!-- <i class="fas fa-pen"></i>--></h5>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <i class="fas fa-envelope-open"></i>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <h5><%= current_user.address %><!-- <i class="fas fa-pen"></i>--></h5>
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+              </div>
+      
   </div>
 </div>
 <div class="contain-data">
