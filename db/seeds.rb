@@ -70,6 +70,17 @@ users = [
     address: "21 rue de paris Nice",
     password: "azerty",
     phone: "0629872485"
+  },
+  {
+    pseudo: "Aurel",
+    first_name: "Aurelien",
+    last_name: "Canonne",
+    email: "aurelien.canonne@gmail.com",
+    bio: "Bonjour je m'appelle Aurelien, en 2014 je me suis fait mal au dos suite à un acccident de voiture,
+    de nombreux site afin de pouvoir trouver une aide ponctuel en cas de besoin",
+    address: "21bis rue de paris 06000 Nice",
+    password: "azerty",
+    phone: "06 45 35 26 43"
   }
 ]
 
