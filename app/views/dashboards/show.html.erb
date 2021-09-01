@@ -1,150 +1,141 @@
 <div class="wrap">
   <div class="user-card">
-    <div>
-    <!--cl_image_tag current_user.avatar.key-->
-    <%= cl_image_tag current_user.avatar.key, :class => "avatar-bordered"%>
-    </div>
-     <div class="col-md-8">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <i class=" mb-0 fas fa-users"></i>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                       <h5><%= current_user.pseudo %></h5>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <i class=" mb-0 fas fa-user"></i>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      <h5><%= current_user.first_name %></h5>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <i class=" mb-0 fas fa-user-tag"></i>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      <h5><%= current_user.last_name %></h5>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <i class="mb-0 fas fa-address-card"></i>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      <h5><%= current_user.phone %><!-- <i class="fas fa-pen"></i>--></h5>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <i class="fas fa-envelope-open"></i>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      <h5><%= current_user.address %><!-- <i class="fas fa-pen"></i>--></h5>
-                    </div>
-                  </div>
-                  <hr>
-                </div>
-              </div>
-      
-  </div>
-</div>
-<div class="contain-data">
-  <div class="card-index-infos">
-  <div class="caret">
-      <h2 id="need">Requêtes<i class="fas fa-angle-right"></i></h2>
-  </div>
-  <div class="caret">
-      <h2 id="help">Offres <i class="fas fa-angle-right"></i></h2>
-  </div>
-  </div>
-    <div class="list">
-      <div class="search-bar w-50 ml-2">
-        <!-- commentaire particulier  <p class="border">Find a mission + zoom icon <i class="fas fa-search"></i></p>-->
+      <div>
+      <%= cl_image_tag current_user.avatar.key, :class => "avatar-bordered"%>
       </div>
-    </div>
-      <div class="product-list" id="div_need" >
-      <h2>Requêtes</h2>
-      <% current_user.missions.each do |mission| %>
-          <div class="mt-4 p-2 product-card">
-            <div class="info">
-              <div class="date">
-                <%= (mission.started_ad).strftime("%d/%m/%Y %H:%M:%S") %>
-              </div>
-              <p> <%= mission.description %></p>
-              <%= link_to icon("fas fa-info-circle", "Consulter"), "#", class: "info-candidat"%>
-              <!--<p>statut</p> -->
-            </div>
-            <%# <p class="user"><%= mission.user.first_name %>
-            <% mission.helps.each do |help| %>
-              <% if help.status == "confirmed" %>
-                <%= cl_image_tag help.user.avatar.key, class: "avatar-bordered"%>
-                <%= help.user.first_name %>
-              <% end %>
-            <% end %>
+      <div class="col-md-8">
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <i class=" mb-0 fas fa-users"></i>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <h5><%= current_user.pseudo %></h5>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <i class=" mb-0 fas fa-user"></i>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <h5><%= current_user.first_name %></h5>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <i class=" mb-0 fas fa-user-tag"></i>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <h5><%= current_user.last_name %></h5>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <i class="mb-0 fas fa-address-card"></i>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <h5><%= current_user.phone %><!-- <i class="fas fa-pen"></i>--></h5>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <i class="fas fa-envelope-open"></i>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <h5><%= current_user.address %><!-- <i class="fas fa-pen"></i>--></h5>
+                      </div>
+                    </div>
+                    <hr>
+                  </div>
+                </div>
           </div>
-      <% end %>
-      </div>
-
-        <div id="div_help" class="product-list d-none">
-        <h2>Offres</h2>
-          <% current_user.helps.each do |help| %>
-              <div class="mt-2 product-card">
-                <div class="">
-                  <%= cl_image_tag help.mission.user.avatar.key, class: "avatar-card" %>
-                  <p class="user"><%= help.mission.user.first_name %> </p>
+        </div>
+    </div>
+    <div class="contain-data">
+        <div class="card-index-infos">
+            <div class="caret">
+                <h2 id="need">Requêtes<i class="fas fa-angle-right"></i></h2>
+            </div>
+            <div class="caret">
+                <h2 id="help">Offres <i class="fas fa-angle-right"></i></h2>
+            </div>
+        </div>
+        <div class="product-list" id="div_need" >
+          <h2>Requêtes</h2>
+          <% current_user.missions.each do |mission| %>
+            <div class="mt-4 p-2 product-card">
+              <div class="info">
+                <div class="date">
+                  <%= (mission.started_ad).strftime("%d/%m/%Y %H:%M:%S") %>
                 </div>
-                <div class="info">
-                  <div class="date">
-                    <%= (help.mission.started_ad).strftime("%d/%m/%Y %X")%>
-                  </div>
-                  <p> <%= help.mission.description %></p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                      <% if help.status == "pending" %>
-                        <label for="file"> En attente: </label>
-                        <progress id="file" max="100" value="50"> 50% </progress>
-                      <% else %>
-                        <label for="file"> Validé: </label>
-                        <progress id="file" max="100" value="100"> 100% </progress>
-                      <%end %>
-                  </div>
-                  <% if help.status == "confirmed"%>
-                      <div id="btn-dashboard" class = "button-dashboard w-25 btn- btn-flat" >Ajouter un commentaire</div>
-                          <div id="div_review" class="d-none">
-                            <%= simple_form_for [ help ] do |f| %>
-                              <div class="field">
-                                <%= f.label :helpee_review, label: "Ecrire votre commentaire"%><br>
-                                <%= f.text_area :helpee_review, class: "form-control" %>
-                              </div>
-                              <div class="field" id="review-star-ratings">
-                                  <%= f.input :helpee_rating, as: :hidden  %>
-                                    <%help.helpee_rating.to_i.times do |index| %>
-                                      <i id="<%= index + 1 %>" class="review-rating fas fa-star"></i>
-                                    <% end %>
-                                    <%  (help.helpee_rating.to_i + 1).upto(Help::AUTHORIZED_RATINGS.max) do |index| %>
-                                      <i id="<%= index %>" class="review-rating far fa-star"></i>
-                              </div>
-                              <div class="actions">
-                                <%= f.submit "Valider le commentaire", class: "button btn-flat" %>
-                              </div>
-                            <% end %>
-                        </div>
-                    <% end %>
-                <% end %>
-                        </div>
-                   </div>
-
+                <p> <%= mission.description %></p>
+                <%= link_to icon("fas fa-info-circle", "Consulter"), "#", class: "info-candidat"%>
               </div>
-        <% end %>
+              <% mission.helps.each do |help| %>
+                <% if help.status == "confirmed" %>
+                  <%= cl_image_tag help.user.avatar.key, class: "avatar-bordered"%>
+                  <%= help.user.first_name %>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
-        </div>
+        <div id="div_help" class="product-list d-none">
+            <h2>Offres</h2>
+              <% current_user.helps.each do |help| %>
+                  <div class="mt-2 product-card">
+                    <div class="">
+                      <%= cl_image_tag help.mission.user.avatar.key, class: "avatar-card" %>
+                      <p class="user"><%= help.mission.user.first_name %></p>
+                    </div>
+                    <div class="info">
+                      <div class="date">
+                        <%= (help.mission.started_ad).strftime("%d/%m/%Y %X")%>
+                      </div>
+                      <p><%= help.mission.description %></p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <% if help.status == "pending" %>
+                              <label for="file"> En attente: </label>
+                              <progress id="file" max="100" value="50"> 50% </progress>
+                            <% else %>
+                              <label for="file"> Validé: </label>
+                              <progress id="file" max="100" value="100"> 100% </progress>
+                            <%end %>
+                        </div>
+                          <% if help.status == "confirmed"%>
+                        <div id="btn-dashboard" class = "button-dashboard w-25 btn- btn-flat" >Ajouter un commentaire</div>
+                            <div id="div_review" class="d-none">
+                              <%= simple_form_for [ help ] do |f| %>
+                                <div class="field">
+                                  <%= f.label :helpee_review, label: "Ecrire votre commentaire"%><br>
+                                  <%= f.text_area :helpee_review, class: "form-control" %>
+                                </div>
+                                <div class="field" id="review-star-ratings">
+                                    <%= f.input :helpee_rating, as: :hidden  %>
+                                      <%help.helpee_rating.to_i.times do |index| %>
+                                        <i id="<%= index + 1 %>" class="review-rating fas fa-star"></i>
+                                      <% end %>
+                                      <%  (help.helpee_rating.to_i + 1).upto(Help::AUTHORIZED_RATINGS.max) do |index| %>
+                                        <i id="<%= index %>" class="review-rating far fa-star"></i>
+                                      <% end %>
+                                </div>
+                                <div class="actions">
+                                  <%= f.submit "Valider le commentaire", class: "button btn-flat" %>
+                                </div>
+                              <% end %>
+                            </div>
+                      <% end %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+          </div>
+    </div>
+    
 </div>
