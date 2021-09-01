@@ -1,6 +1,6 @@
 <div class="<%= action_name%> navbar navbar-expand-sm navbar-light navbar-lewagon sticky">
   <%= link_to "/missions", class: "navbar-brand" do %>
-    <%= image_tag "logo.png" %>
+    <%= image_tag "logo.png", class: "w-50" %>
     <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -18,9 +18,7 @@
         </li>
         <li class="nav-item dropdown">
 
-          <!-- cl_current_user.avatar.key -->
-
-          <%= image_tag ('user5.jpg'), class: "avatar-large", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= cl_image_tag current_user.avatar.key, class: "avatar-large", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Mon profil", dashboard_path, class: "dropdown-item" %>
             <%= link_to "Éditer mon profil", edit_user_registration_path, class: "dropdown-item" %>
@@ -30,7 +28,7 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Se connecter", new_user_session_path, class: "btn btn-flat" %>
+        <%= link_to "Se connecter", new_user_session_path, class: "btn btn-flat" %>
         </li>
       <% end %>
     </ul>

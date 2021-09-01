@@ -6,7 +6,6 @@
   </div>
 
 <div class="bg-light">
-
     <div class="wrapper">
         <div class="grid">
             <% @missions.each do |mission| %>
@@ -14,6 +13,7 @@
                     <div class="card-index">
                     <% if mission.category.photo.attached? %>
                         <%= cl_image_tag mission.category.photo.key %>
+                        <p id="address"><i class="fas fa-map-marker-alt"></i> <%= mission.address %></p>
                     <% else %>
                         <%= image_tag "logo.png" %>
                     <% end %>
@@ -21,7 +21,9 @@
                             <div>
                                 <p id="title"><%= mission.category.name %></p>
                                 <p id="desc"><%= mission.description %> </p>
+                                
                             </div>
+                            
                         </div>
                     </div>
                 <% end %>

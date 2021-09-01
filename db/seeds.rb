@@ -110,7 +110,7 @@ missions = [
     qui puisse m'aider à traduire et remplir avec moi ma demande de visa ",
     started_ad: "2021-09-05 20:00:00",
     finished_at: "2021-09-05 22:00:00",
-    address: "71 Boulevard Gorbella, 06100 Nice",
+    address: "71 Bld Gorbella, 06100 Nice",
     user_id: 3,
     category_id: 4
   },
@@ -120,7 +120,7 @@ missions = [
     ayant de grosse douleur au dos je ne peux pas le porter tout seul",
     started_ad: "2021-08-24 09:00:00",
     finished_at: "2021-08-24 11:00:00",
-    address: "5 Avenue Romain Rolland, 06100 Nice",
+    address: "5 Av Romain Rolland, 06100 Nice",
     user_id: 3,
     category_id: 5
   },
@@ -130,7 +130,7 @@ missions = [
     faire mes courses n'ayant plus la possibilité de conduire actuellement",
     started_ad: "2021-09-05 19:00:00",
     finished_at: "2021-09-05 21:00:00",
-    address: "69 Boulevard Gorbella, 06100 Nice",
+    address: "69 Bld Gorbella, 06100 Nice",
     user_id: 2,
     category_id: 6
   },
@@ -140,7 +140,7 @@ missions = [
      je cherche quelqu'un qui puisse aider mon fils à faire ses devoirs de 4 ème",
     started_ad: "2021-08-21 14:00:00",
     finished_at: "2021-08-21 15:00:00",
-    address: "5 Avevenue Desambrois, 06000 Nice",
+    address: "5 Av Desambrois, 06000 Nice",
     user_id: 3,
     category_id: 7
   },
