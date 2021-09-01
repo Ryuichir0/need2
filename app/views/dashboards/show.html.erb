@@ -39,7 +39,7 @@
                       <i class="mb-0 fas fa-address-card"></i>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <h5><%= current_user.phone %><!-- <i class="fas fa-pen"></i>--></h5>
+                      <h5><%= number_to_phone(current_user.phone, pattern: /(\d{3})(\d{4})(\d{4})$/) %><!-- <i class="fas fa-pen"></i>--></h5>
                     </div>
                   </div>
                   <hr>
@@ -54,16 +54,16 @@
                   <hr>
                 </div>
               </div>
-      
+
   </div>
 </div>
 <div class="contain-data">
   <div class="card-index-infos">
   <div class="caret">
-      <h2 id="need">Requêtes<i class="fas fa-angle-right"></i></h2>
+      <h2 id="need">Requêtes</h2><i class="fas fa-angle-right" id="need"></i>
   </div>
   <div class="caret">
-      <h2 id="help">Offres <i class="fas fa-angle-right"></i></h2>
+      <h2 id="help">Offres</h2><i class="fas fa-angle-right" id="help"></i>
   </div>
   </div>
     <div class="list">
@@ -72,7 +72,6 @@
       </div>
     </div>
       <div class="product-list" id="div_need" >
-      <h2>Requêtes</h2>
       <% current_user.missions.each do |mission| %>
           <div class="mt-4 p-2 product-card">
             <div class="info">
@@ -95,7 +94,6 @@
       </div>
 
         <div id="div_help" class="product-list d-none">
-        <h2>Offres</h2>
           <% current_user.helps.each do |help| %>
               <div class="mt-2 product-card">
                 <div class="">
