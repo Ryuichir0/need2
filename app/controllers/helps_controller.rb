@@ -26,7 +26,7 @@ class HelpsController < ApplicationController
   end
 
   def confirm
-    @help = Help.find(params[:help_id])
+    @help = Help.find(params[:help])
     @help.status = "confirmed"
     if @help.save
       redirect_to dashboard_path

@@ -60,10 +60,10 @@
 <div class="contain-data">
   <div class="card-index-infos">
   <div class="caret">
-      <h2 id="need">Requêtes</h2><i class="fas fa-angle-right" id="need"></i>
+      <h2 id="need">Requêtes<i class="fas fa-angle-right"></i></h2>
   </div>
   <div class="caret">
-      <h2 id="help">Offres </h2><i class="fas fa-angle-right" id="help"  ></i>
+      <h2 id="help">Offres <i class="fas fa-angle-right"></i></h2>
   </div>
   </div>
     <div class="list">
@@ -75,7 +75,6 @@
       <h2>Requêtes</h2>
       <% current_user.missions.each do |mission| %>
           <div class="mt-4 p-2 product-card">
-<<<<<<< HEAD
             <div class="info">
               <div class="date">
                 <%= (mission.started_ad).strftime("%d/%m/%Y %H:%M:%S") %>
@@ -83,23 +82,6 @@
               <p> <%= mission.description %></p>
               <%= link_to icon("fas fa-info-circle", "Consulter"), "#", class: "info-candidat"%>
               <!--<p>statut</p> -->
-=======
-            <div class="border info">
-                <p> <%= mission.description %></p>
-            <div class= "border d-flex">
-                <%= link_to mission_path(mission), :action => 'go' do %>
-                <h5><i class="fas fa-info-circle"></i> Consulter la mission</h5>
-                <% end %>
-                <div class="d-flex date">
-                   <p class="pr-1">Date de début : </p>
-                    <%= Date.parse(mission.started_ad.to_s).strftime("%d/%m/%Y %X")%>
-                   <p class="pr-3">Date de fin : </p>
-                    <%= Date.parse(mission.finished_at.to_s).strftime("%d/%m/%Y %X") %>
-                </div>
-                <div>
-                </div>
-          </div>
->>>>>>> e62a1934abe1b755c775ab4c538b17e94b9472df
             </div>
             <%# <p class="user"><%= mission.user.first_name %>
             <% mission.helps.each do |help| %>
@@ -111,11 +93,9 @@
           </div>
       <% end %>
       </div>
+
         <div id="div_help" class="product-list d-none">
-<<<<<<< HEAD
-=======
-        <h2>Demandes</h2>
->>>>>>> e62a1934abe1b755c775ab4c538b17e94b9472df
+        <h2>Offres</h2>
           <% current_user.helps.each do |help| %>
               <div class="mt-2 product-card">
                 <div class="">
@@ -128,20 +108,19 @@
                   </div>
                   <p> <%= help.mission.description %></p>
                 <div class="d-flex justify-content-between align-items-center">
-                <div>
-                    <% if help.status == "pending" %>
-                      <label for="file"> En attente: </label>
-                      <progress id="file" max="100" value="50"> 50% </progress>
-                    <% else %>
-                      <label for="file"> Validé: </label>
-                      <progress id="file" max="100" value="100"> 100% </progress>
-                    <%end %>
-                   </div>
-                     <% if help.status == "confirmed"%>
-                        <div id="btn-dashboard" class = "button-dashboard w-25 btn- btn-flat" >Ajouter un commentaire</div>
+                  <div>
+                      <% if help.status == "pending" %>
+                        <label for="file"> En attente: </label>
+                        <progress id="file" max="100" value="50"> 50% </progress>
+                      <% else %>
+                        <label for="file"> Validé: </label>
+                        <progress id="file" max="100" value="100"> 100% </progress>
+                      <%end %>
+                  </div>
+                  <% if help.status == "confirmed"%>
+                      <div id="btn-dashboard" class = "button-dashboard w-25 btn- btn-flat" >Ajouter un commentaire</div>
                           <div id="div_review" class="d-none">
-                          <%= simple_form_for [ help ] do |f| %>
-
+                            <%= simple_form_for [ help ] do |f| %>
                               <div class="field">
                                 <%= f.label :helpee_review, label: "Ecrire votre commentaire"%><br>
                                 <%= f.text_area :helpee_review, class: "form-control" %>
@@ -153,21 +132,19 @@
                                     <% end %>
                                     <%  (help.helpee_rating.to_i + 1).upto(Help::AUTHORIZED_RATINGS.max) do |index| %>
                                       <i id="<%= index %>" class="review-rating far fa-star"></i>
-                                    <% end %>
                               </div>
                               <div class="actions">
                                 <%= f.submit "Valider le commentaire", class: "button btn-flat" %>
                               </div>
-                          <% end %>
-                        </div>
-                        <div class="actions">
-                          <%= f.submit "Valider", class: "btn btn-flat" %>
+                            <% end %>
                         </div>
                     <% end %>
+                <% end %>
+                        </div>
                    </div>
-                </div>
-                </div>
+
               </div>
         <% end %>
+        </div>
         </div>
 </div>
