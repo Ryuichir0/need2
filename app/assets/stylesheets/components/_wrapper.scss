@@ -1,6 +1,7 @@
 .wrapper{
   display: flex;
   justify-content: space-between;
+  padding-top: 10px;
 }
 
 .grid {
@@ -8,5 +9,14 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
   margin: 10px 20px;
-  
+
+}
+
+.title {
+  padding: 0px 0px 10px;
+  margin: 15px 0px 0px 20px;
+  font-size: 72px;
+  background: linear-gradient(#71C9CE, #00f2ff);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
