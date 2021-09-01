@@ -6,24 +6,35 @@
       <%= f.text_area :description, class: "form-control", label: "Description"%>
     </div>
 
-    <div class="field">
-      <%= f.input :started_ad, as: :datetime, label: "Date de début" %>
-    </div>
+    <!-- <div class="field">
+      <%= f.input :started_ad, as: :datetime %>
+    </div> -->
+    <p>
+    </p>
 
     <div class="field">
-      <%= f.input :finished_at, as: :datetime, label: "Date de fin"%>
+      <%= f.input :started_ad, as: :string, class: "form-control", input_html: { id: "flatpickr" } %>
+    </div>
+
+    <!--<div class="field">
+      <%= f.input :finished_at, as: :datetime %>
+    </div> -->
+
+    <div class="field">
+      <%= f.input :finished_at, as: :string, class: "form-control", input_html: { id: "flatpickr" } %>
     </div>
 
     <div class="field">
       <%= f.input :address, label: "Addresse"%>
     </div>
      <div class="field">
-      <%= f.association :category, collection: Category.all, label: "Choisir votre catégorie" %> 
+      <%= f.association :category, collection: Category.all, label: "Choisir votre catégorie" %>
     </div>
 
     <div class="actions">
       <%= f.submit "Créer une demande", class: "button btn-flat" %>
     </div>
-    
+
   <% end %>
+
 </div>

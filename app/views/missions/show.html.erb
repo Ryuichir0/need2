@@ -5,7 +5,7 @@
 <div class="container">
   <div class="content-show">
     <div class="content-category">
-        <%= cl_image_tag @mission.category.photo.key %> 
+        <%= cl_image_tag @mission.category.photo.key %>
     </div>
     <div class="content-show-right">
       <div class="content-show-description">
@@ -14,7 +14,7 @@
       </div>
       <div class="content-show-rating">
               <h4> Note de <%=@mission.user.first_name %> <%= @mission.user.rating_as_helpee.floor(2) %> /5 </h4>
-              <div class="content-show-review"> 
+              <div class="content-show-review">
                   <% @mission.user.review_for_helpee.last(4).split(",").each do |review| %>
                     <div class=" content-review "><p><i class="fas fa-quote-right"></i><strong><%=review[3]%></strong></p></div>
                     <div class=" content-review pl-1"><p><i class="fas fa-quote-right"></i><strong><%=review[2]%></strong></p></div>
