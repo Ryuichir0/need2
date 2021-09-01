@@ -3,12 +3,14 @@
   display: flex;
    .info {
     margin: 10px 15px;
+    flex-grow:1;
    }
    .date {
     margin: 10px 15px;
     flex-grow:1;
     font-weight: bold;
     padding-top: 23px;
+
 
    }
   .user {

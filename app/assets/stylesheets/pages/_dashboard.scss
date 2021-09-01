@@ -2,6 +2,10 @@
 
 .caret{
   display:flex;
+  width:150px;
+  h2 {
+    width:150px;
+  }
 }
 
 #need {
@@ -14,13 +18,16 @@ font-size:35px;
 margin-left:45px;
 }
 
+.title-toggle{
+  color: $user;
+}
 
 
 .user-card {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 0 100px;
+  margin: 0 0 0 250px;
   width: 900px;
 }
 .user-info{
@@ -43,8 +50,9 @@ margin:15px;
 }
 
 .contain-data{
-
+  margin-left:150px;
   display: flex;
+  width: 1000px;
 }
 
 .card-index-infos{
@@ -77,7 +85,8 @@ margin:15px;
   background-color: $user-info;
   border-radius:20px;
   padding: 20px 30px;
-  margin-top: 20px;
+  margin-top: 45px;
+  margin-left: 20px;
 }
 .product-card {
   overflow: hidden;
