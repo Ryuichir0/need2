@@ -1,5 +1,3 @@
-
-
 .caret{
   display:flex;
   width:150px;
@@ -15,7 +13,8 @@ margin-left:20px;
 
 #help{
 font-size:35px;
-margin-left:45px;
+margin-left:20px;
+margin-right:27px;
 }
 
 .title-toggle{
@@ -113,3 +112,12 @@ margin:15px;
 #button{
   margin: 10px;
 }
+.card-body{
+  color: black;
+  background-color: $user-info;
+  font-family: $user-font;
+  h5{
+    color: black;
+  }
+}
+

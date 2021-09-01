@@ -32,6 +32,9 @@ body {
 }
 a {
   text-decoration: none !important;
+  &:hover{
+    color: $user;
+  }
 }
 header {
   grid-area: header;

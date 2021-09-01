@@ -1,8 +1,8 @@
 const dashboard = () => {
   const need = document.querySelector("#need");
   const help = document.querySelector("#help");
-  const needtitle = document.querySelector("#requetes");
-  const helptitle = document.querySelector("#offres");
+  const needtitle = document.querySelector("#need");
+  const helptitle = document.querySelector("#help");
 
   const div_need = document.getElementById("div_need");
   const div_help = document.getElementById("div_help");
@@ -19,6 +19,8 @@ const dashboard = () => {
     div_need.classList.add("d-none");
     needtitle.classList.remove("title-toggle");
     helptitle.classList.add("title-toggle");
+
+
   });
 }
 export { dashboard }
