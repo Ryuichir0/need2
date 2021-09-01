@@ -10,7 +10,6 @@
     <% end %>
   <% end %>
 </div>
-  <%# </div> %>
 <div class="bg-light">
   <div class="wrapper">
       <div class="grid">
@@ -18,15 +17,17 @@
               <%= link_to mission_path(mission), :action => 'go' do %>
                   <div class="card-index">
                   <% if mission.category.photo.attached? %>
-                      <%= cl_image_tag mission.category.photo.key %>
+                    <%= cl_image_tag mission.category.photo.key %>
                   <% else %>
-                      <%= image_tag "logo.png" %>
+                    <%= image_tag "logo.png" %>
                   <% end %>
-                      <div class="card-index-members">
-                          <div>
+                  <div class="card-index-members">
+                          <div class =" p-2">
                               <p id="title"><%= mission.category.name %></p>
-                              <p id="desc"><%= mission.description %> </p>
+                              <p id="desc"><%= mission.description %></p>
+                              <p><i class="pr-2 fas fa-map-marker-alt"></i><%= mission.address %></p>
                           </div>
+                           <%= cl_image_tag mission.user.avatar.key, class: "avatar-large index-avatar"%>
                       </div>
                   </div>
               <% end %>
