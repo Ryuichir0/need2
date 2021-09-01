@@ -23,7 +23,7 @@ User.destroy_all
 users = [
   {
     pseudo: "VickySa",
-    first_name: "Vicky",
+    first_name: "victoria",
     last_name: "Salpetier",
     email: "vicky.salpetier@gmail.com",
     bio: "je suis une personne de 85 ans",
@@ -66,7 +66,7 @@ users = [
     first_name: "Sylvie",
     last_name: "Topita",
     email: "sylvie.topita@gmail.com",
-    bio: "mère au foyer de 40 ans",
+    bio: "Bonjour je suis une mère au foyer de 40 ans avec 3 enfants en bas âges",
     address: "21 rue de paris Nice",
     password: "azerty",
     phone: "0629872485"
@@ -81,6 +81,16 @@ users = [
     address: "21bis rue de paris 06000 Nice",
     password: "azerty",
     phone: "06 45 35 26 43"
+  },
+  {
+    pseudo: "tibo54",
+    first_name: "Tibo",
+    last_name: "Dupont",
+    email: "tibo.dupont@gmail.com",
+    bio: "Jeune retraité, en fauteuil roulant depuis 3 ans, je cherche de temps en temps de l'aide pour certaine tache",
+    address: "28 avenue notre dame Nice",
+    password: "azerty",
+    phone: "0629872486"
   }
 ]
 
@@ -96,6 +106,26 @@ missions = [
     category_id: 1
   },
   {
+    slug: "administrative",
+    description: "A la retraite depuis maintenant quelque année, je cherche quelqu'un qui puisse m'aider a faire,
+    le tri dans mes papiers administratif",
+    started_ad: "2021-09-05 10:00:00",
+    finished_at: "2021-09-05 12:00:00",
+    address: "50 Rue d'Italie, 06000 Nice",
+    user_id: 2,
+    category_id: 1
+  },
+  {
+    slug: "administrative",
+    description: "Je cherche quelqu'un ayant une bonne connaissance en informatique, 
+    pour m'aider à remplir ma demande de retraite en ligne",
+    started_ad: "2021-09-12 09:00:00",
+    finished_at: "2021-09-12 12:00:00",
+    address: "50 avenue de la marne, 06100 Nice",
+    user_id: 3,
+    category_id: 1
+  },
+  {
     slug: "bricolage",
     description: "Ayant mal au dos je ne peux pas monter moi-même mon étagère,
     je cherche quelqu'un qui puisse m'aider ",
@@ -106,12 +136,30 @@ missions = [
     category_id: 2
   },
   {
+    slug: "bricolage",
+    description: "Bonjour je cherche quelqu'un pour m'aider à réparer ma plomberie ",
+    started_ad: "2021-08-10 17:00:00",
+    finished_at: "2021-09-10 17:30:00",
+    address: "17 Bd Victor Hugo, 06000 Nice",
+    user_id: 7,
+    category_id: 2
+  },
+  {
     slug: "domicile",
     description: "Personne de 65 ans, je cherche quelqu'un pour m'aider à faire le ménage chez moi,
      mes douleurs aux jambes ne me permette pas de le faire correctement et totalement ",
     started_ad: "2021-10-20 14:00:00",
     finished_at: "2021-08-20 16:00:00",
     address: " 30 Av. Jean Médecin, 06000 Nice",
+    user_id: 1,
+    category_id: 3
+  },
+  {
+    slug: "domicile",
+    description: "Bonjour, je cherche quelqu'un pour remplacer mon aide à domicile qui devras s'absenter pour une journée, ",
+    started_ad: "2021-10-20 14:00:00",
+    finished_at: "2021-08-20 16:00:00",
+    address: " 10 rue Verdi, 06000 Nice",
     user_id: 1,
     category_id: 3
   },
@@ -126,12 +174,32 @@ missions = [
     category_id: 4
   },
   {
+    slug: "linguistique",
+    description: " je cherche quelqu'un parlant très bien japonais pour m'aider à remplir certain papier,
+    pour mon petit-fils qui vit la-bas",
+    started_ad: "2021-09-07 14:00:00",
+    finished_at: "2021-09-07 16:00:00",
+    address: "34 bd gorbella, 06000 Nice",
+    user_id: 7,
+    category_id: 4
+  },
+  {
     slug: "logistique",
     description: "je cherche une âme charitable afin de pouvoir m'aider à déplacer un canapé,
     ayant de grosse douleur au dos je ne peux pas le porter tout seul",
-    started_ad: "2021-08-24 09:00:00",
-    finished_at: "2021-08-24 11:00:00",
+    started_ad: "2021-08-18 09:00:00",
+    finished_at: "2021-08-18 11:00:00",
     address: "5 Av Romain Rolland, 06100 Nice",
+    user_id: 1,
+    category_id: 5
+  },
+  {
+    slug: "logistique",
+    description: "Bonjour je viens d'acheter un canapé malheureusement,
+    je dois trouver quelqu'un pour m'aider à mettre l'ancien au encombrant",
+    started_ad: "2021-09-15 09:00:00",
+    finished_at: "2021-08-15 11:00:00",
+    address: "5 Rue Grimaldi, 06000 Nice",
     user_id: 3,
     category_id: 5
   },
@@ -146,6 +214,15 @@ missions = [
     category_id: 6
   },
   {
+    slug: "personne",
+    description: "Bonjour je suis à la recherche d'une ame charitable qui puisse m'emmener à la messe le dimanche qui arrive ",
+    started_ad: "2021-09-05 19:00:00",
+    finished_at: "2021-09-05 21:00:00",
+    address: "73 Bld dubouchage, 06000 Nice",
+    user_id: 5,
+    category_id: 6
+  },
+  {
     slug: "scolaire",
     description: "Ayant quitté l'école très tôt,
      je cherche quelqu'un qui puisse aider mon fils à faire ses devoirs de 4 ème",
@@ -153,6 +230,15 @@ missions = [
     finished_at: "2021-08-21 15:00:00",
     address: "5 Av Desambrois, 06000 Nice",
     user_id: 3,
+    category_id: 7
+  },
+  {
+    slug: "scolaire",
+    description: "Bonjour je suis à la recherche d'une personne très forte en math qui puisse aider ma fille pour la remettre au niveau  ",
+    started_ad: "2021-09-21 14:00:00",
+    finished_at: "2021-09-21 15:00:00",
+    address: "25 Av Desambrois, 06000 Nice",
+    user_id: 5,
     category_id: 7
   },
 ]
