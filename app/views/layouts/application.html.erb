@@ -29,6 +29,8 @@
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'%>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
   </head>
 
   <body class="<%= action_name%>">
@@ -42,5 +44,16 @@
       </div>
       <%= render 'shared/footer' %>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+          config = {
+          enableTime: true,
+          dateFormat: "d-m-Y H:i",
+          }
+          flatpickr('#flatpickr', config);
+    </script>
   </body>
+
 </html>
