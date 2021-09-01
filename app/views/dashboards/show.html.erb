@@ -77,27 +77,35 @@
                       <progress id="file" max="100" value="100"> 100% </progress>
                     <%end %>
                    </div>
-                    <div id="btn-dashboard" class = "button-dashboard w-25 btn- btn-flat" >Ajouter un commentaire</div>
-                    <div id="div_review" class="d-none">
-                    <%= simple_form_for [ help ] do |f| %>
-                        <div class="field">
-                          <%= f.label :helpee_review, label: "Ecrire votre commentaire"%><br>
-                          <%= f.text_area :helpee_review, class: "form-control" %>
+                     <% if help.status == "confirmed"%>
+                        <div id="btn-dashboard" class = "button-dashboard w-25 btn- btn-flat" >Ajouter un commentaire</div>
+                          <div id="div_review" class="d-none">
+                          <%= simple_form_for [ help ] do |f| %>
+            
+                              <div class="field">
+                                <%= f.label :helpee_review, label: "Ecrire votre commentaire"%><br>
+                                <%= f.text_area :helpee_review, class: "form-control" %>
+                              </div>
+                              <div class="field" id="review-star-ratings">
+                                  <%= f.input :helpee_rating, as: :hidden  %>
+                                    <%help.helpee_rating.to_i.times do |index| %>
+                                      <i id="<%= index + 1 %>" class="review-rating fas fa-star"></i>
+                                    <% end %>
+                                    <%  (help.helpee_rating.to_i + 1).upto(Help::AUTHORIZED_RATINGS.max) do |index| %>
+                                      <i id="<%= index %>" class="review-rating far fa-star"></i>
+                                    <% end %>
+                              </div>
+                              <div class="actions">
+                                <%= f.submit "Valider le commentaire", class: "button btn-flat" %>
+                              </div>
+                          <% end %>
                         </div>
-                        <div class="field">
-                                             <%= f.label :helpee_rating, label: "Donner une note entre 1 et 5"%><br>
-                          <%= f.input :helpee_rating, class: "form-control",label: false %>
-
-                        </div>
-                        <div class="actions">
-                          <%= f.submit "Valider le commentaire", class: "button btn-flat" %>
-                        </div>
-                    <% end %>
-                   </div>
+                      <% end %>
                 </div>
                 </div>
                 <div class="date">
-                  <%= Date.parse(help.mission.started_ad.to_s).strftime("%d/%m/%Y %X")%>
+                  <%= Date.parse(help.mission.started_ad.to_s).strftime("%d/%m/%Y %T")%>
+                  <%= Date.parse(help.mission.finished_at.to_s).strftime("%d/%m/%Y %T")%>
                 </div>
               </div>>
         <% end %>

@@ -27,6 +27,7 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { dynamicRating } from '../plugins/starsInReviewForm';
 import { initMapbox } from '../plugins/init_mapbox';
 import { dashboard } from '../components/dashboard';
 import { review } from '../components/review';
@@ -38,4 +39,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   dashboard();
   review();
+  dynamicRating();
 });
