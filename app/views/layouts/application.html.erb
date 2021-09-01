@@ -30,7 +30,6 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-
   </head>
 
   <body class="<%= action_name%>">
@@ -49,8 +48,10 @@
 
     <script>
           config = {
+          inline: true,
           enableTime: true,
           dateFormat: "d-m-Y H:i",
+          //"plugins": [new rangePlugin({ input: "#flatpickrend"})]
           }
           flatpickr('#flatpickr', config);
     </script>

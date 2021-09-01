@@ -1,5 +1,5 @@
 <div class="container m-auto my-4 p-4 shadow">
-  <div class="w-50 m-auto">
+  <div class="w-50">
     <h2>Création d'une nouvelle demande d'aide </h2>
     <%= simple_form_for [ @mission ] do |f| %>
       <div class="field">
@@ -12,7 +12,7 @@
       </div> -->
       <p>
       </p>
-
+      <div class="calendar" style="display: flex">
       <div class="field">
         <%= f.input :started_ad, as: :string, class: "form-control", label: "Date de Début", input_html: { id: "flatpickr" } %>
       </div>
@@ -24,7 +24,7 @@
       <div class="field">
         <%= f.input :finished_at, as: :string, class: "form-control", label: "Date de Fin", input_html: { id: "flatpickr" } %>
       </div>
-
+      </div>
       <div class="field">
         <%= f.input :address, label: "Addresse"%>
       </div>
@@ -33,7 +33,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Créer une demande", class: "button btn-flat" %>
+        <%= f.submit "Créer", class: "button btn-flat" %>
       </div>
     <% end %>
   </div>
