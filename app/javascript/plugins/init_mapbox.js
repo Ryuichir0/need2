@@ -31,7 +31,15 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-      new mapboxgl.Marker()
+      const element = document.createElement('div');
+        element.className = 'marker rounded-circle';
+        element.style.backgroundImage = `url('${marker.avatar}')`;
+        element.style.backgroundSize = 'cover';
+        element.style.repeat = 'no-repeat';
+        element.style.width = '40px';
+        element.style.height = '40px';
+
+      new mapboxgl.Marker(element)
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)
         .addTo(map);

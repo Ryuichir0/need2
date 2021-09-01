@@ -1,4 +1,12 @@
+<%= form_tag missions_path, method: :get do %>
+  <%= select_tag :category, options_for_select(Category.all.pluck(:name, :id), params[:category]), onchange: "this.form.submit()" %>
+<% end %>
+
+
+  </div>
+
 <div class="bg-light">
+
     <div class="wrapper">
         <div class="grid">
             <% @missions.each do |mission| %>
@@ -19,7 +27,6 @@
                 <% end %>
             <% end %>
         </div>
-
         <div id="map"
             style="width: 50%; height: 600px; border-radius: 10px; margin: 2em;"
             data-markers="<%= @markers.to_json %>"

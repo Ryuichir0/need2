@@ -17,67 +17,21 @@
 
 	<div class="comments-container">
 		<h1>Commentaires</h1>
-
+		<% @user.helps.each do  |help|%>
 		<ul id="comments-list" class="comments-list">
 			<li>
 				<div class="comment-main-level">
-					<div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
+					<%= cl_image_tag help.mission.user.avatar.key, class: "avatar-large", alt: "avatar-large" %>
 					<div class="comment-box">
 						<div class="comment-head">
-							<h6 class="comment-name by-author">Agustin</h6>
-							<span>Il y a 20 minutes</span>
+							<h6 class="comment-name by-author"> <%=  help.mission.user.first_name %></h6>
+							<span><%= help.updated_at%></span>
 						</div>
 						<div class="comment-content">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+							<%= help.helper_review %>
 						</div>
 					</div>
 				</div>
-				<ul class="comments-list reply-list">
-					<li>
-						<div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-						<div class="comment-box">
-							<div class="comment-head">
-								<h6 class="comment-name">Lorraine</h6>
-								<span>>Il y a 10 minutes</span>
-
-
-							</div>
-							<div class="comment-content">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-							</div>
-						</div>
-					</li>
-
-					<li>
-						<div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
-						<div class="comment-box">
-							<div class="comment-head">
-								<h6 class="comment-name by-author">Agustin</h6>
-								<span>Il y a 10 minutes</span>
-
-
-							</div>
-							<div class="comment-content">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-							</div>
-						</div>
-					</li>
-				</ul>
-			</li>
-
-			<li>
-				<div class="comment-main-level">
-					<div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-					<div class="comment-box">
-						<div class="comment-head">
-							<h6 class="comment-name">Lorraine</h6>
-							<span>Il y à 10 minutes</span>
-						</div>
-						<div class="comment-content">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-						</div>
-					</div>
-				</div>
-			</li>
+					<% end %>
 		</ul>
 	</div>

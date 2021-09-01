@@ -23,7 +23,7 @@
 
 @import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
 
-body.home{
+body {
   height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr;

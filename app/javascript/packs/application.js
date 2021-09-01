@@ -29,7 +29,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox';
 import { dashboard } from '../components/dashboard';
-
+import { review } from '../components/review';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -37,8 +37,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initMapbox();
   dashboard();
-
-
-
-
+  review();
 });

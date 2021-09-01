@@ -7,12 +7,16 @@ class MissionsController < ApplicationController
     else
       missions = Mission.all
     end
+    if params[:category].present?
+      missions = missions.filter_by_category(params[:category])
+    end
     @missions = missions.pending
     @markers = @missions.geocoded.map do |mission|
       {
         lat: mission.latitude,
         lng: mission.longitude,
-        info_window: render_to_string(partial: "info_windows", locals: { mission: mission })
+        info_window: render_to_string(partial: "info_windows", locals: { mission: mission }),
+        avatar: Cloudinary::Utils.cloudinary_url(mission.user.avatar.key)
       }
     end
   end
