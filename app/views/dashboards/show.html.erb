@@ -38,7 +38,7 @@
                         <i class="mb-0 fas fa-address-card"></i>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                        <h5><%= current_user.phone %><!-- <i class="fas fa-pen"></i>--></h5>
+                        <h5><%= number_to_phone(current_user.phone, pattern: /(\d{2})/, delimiter: " ") %><!-- <i class="fas fa-pen"></i>--></h5>
                       </div>
                     </div>
                     <hr>
@@ -59,10 +59,10 @@
     <div class="contain-data">
         <div class="card-index-infos">
             <div class="caret">
-                <h2 id="need">Requêtes<i class="fas fa-angle-right"></i></h2>
+                <h2 id="need">Requêtes<i class="fas fa-angle-right" id="need"></i></h2>
             </div>
             <div class="caret">
-                <h2 id="help">Offres <i class="fas fa-angle-right"></i></h2>
+                <h2 id="help">Offres <i class="fas fa-angle-right" id="help"></i></h2>
             </div>
         </div>
         <div class="product-list" id="div_need" >
