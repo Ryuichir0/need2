@@ -142,7 +142,7 @@ missions = [
     description: "Bonjour je cherche quelqu'un pour m'aider à réparer ma plomberie ",
     started_ad: "2021-08-10 17:00:00",
     finished_at: "2021-09-10 18:30:00",
-    address: "17 Bd Victor Hugo, 06000 Nice",
+    address: "17 rue Jean medecin, 06000 Nice",
     user_id: 7,
     category_id: 2
   },
