@@ -48,8 +48,9 @@ private
   def help_params
     params.require(:help).permit(:user_id, :mission_id)
   end
+
   def help_review_params
-    params.require(:help).permit(:helpee_review, :helpee_rating)
+    params.require(:help).permit(:helpee_review, :helpee_rating, :helper_rating, :helper_review)
   end
 
   def set_mission
