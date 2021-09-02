@@ -20,16 +20,7 @@
                         <i class=" mb-0 fas fa-user"></i>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                        <h5><%= current_user.first_name %></h5>
-                      </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                      <div class="col-sm-3">
-                        <i class=" mb-0 fas fa-user-tag"></i>
-                      </div>
-                      <div class="col-sm-9 text-secondary">
-                        <h5><%= current_user.last_name %></h5>
+                        <h5><%= current_user.first_name %>  <%= current_user.last_name %></h5>
                       </div>
                     </div>
                     <hr>
@@ -44,10 +35,21 @@
                     <hr>
                     <div class="row">
                       <div class="col-sm-3">
-                        <i class="fas fa-envelope-open"></i>
+                        <i class="mb-0 fas fa-envelope-open"></i>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                        <h5><%= current_user.email %><!-- <i class="fas fa-pen"></i>--></h5>
+                        <h5><%= current_user.address %><!-- <i class="fas fa-pen"></i>--></h5>
+                      </div>
+                    </div>
+                    <hr>
+                     <div class="row">
+                      <div class="col-sm-3">
+                        <i class="mb-0 fas fa-comments"></i>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                       <% current_user.rating_as_helpee.to_i.times do |index| %> 
+                    <i id="<%= index + 1 %>" class="review-rating fas fa-star"></i></h4>
+                  <% end %>
                       </div>
                     </div>
                   </div>

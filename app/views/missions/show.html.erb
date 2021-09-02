@@ -13,13 +13,23 @@
               <p> <%= @mission.description %></p>
       </div>
       <div class="d-flex content-show-rating">
-
               <div class="d-flex content-show-review">
-              <h4> Note de <%=@mission.user.first_name %>
+              <h4> Note de <%= @mission.user.first_name %>
                   <% @mission.user.rating_as_helpee.to_i.times do |index| %>
                     <i id="<%= index + 1 %>" class="review-rating fas fa-star"></i></h4>
                   <% end %>
               </div>
+      </div>
+      <div class="content-show-description">
+                    <div class="card-product-infos-review">
+                        <h3>review</h2>
+                      <% @mission.user.helps_as_helpee.where(status: "confirmed").last(3).each do |help| %>
+                        <div class="flash flash-success fade show">
+                        <%= cl_image_tag help.user.avatar.key, class: "avatar-large", alt: "avatar-large" %>
+                        <%= help.helpee_review %>
+                        </div>
+                      <% end %>
+                    </div>
       </div>
     </div>
   </div>
@@ -29,7 +39,6 @@
         <div class = "content-show-profil-left-text m-1 p-1">
           <p> Annonce créée par <%= @mission.user.first_name.capitalize %></p>
           <p> Membre depuis : <%= Date.parse(@mission.user.created_at.to_s).strftime("%d/%m/%Y") %>
-          <p><%= @mission.user.bio%></p>
         </div>
       </div>
       <% if current_user != @mission.user %>
