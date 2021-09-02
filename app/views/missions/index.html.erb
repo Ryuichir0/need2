@@ -24,7 +24,8 @@
                   <div class="card-index-members">
                           <div class =" p-2">
                               <p id="title"><%= mission.category.name %></p>
-                              <p id="desc"><%= mission.description %></p>
+                              <p class="date"> Début: <%= (mission.started_ad).strftime("%d/%m/%Y à %X") %></p>
+                              <p class="date">Fin: <%= (mission.finished_at).strftime("%d/%m/%Y à  %X") %></p>
                               <p><i class="pr-2 fas fa-map-marker-alt"></i><%= mission.address %></p>
                           </div>
                            <%= cl_image_tag mission.user.avatar.key, class: "avatar-large index-avatar"%>
