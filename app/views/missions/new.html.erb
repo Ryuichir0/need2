@@ -26,14 +26,13 @@
       </div>
       </div>
       <div class="field">
-        <%= f.input :address, label: "Addresse"%>
+        <%= f.input :address, label: "Adresse"%>
       </div>
       <div class="field">
-        <%= f.association :category, collection: Category.all, label: "Choisir votre catégorie" %>
+        <%= f.association :category, collection: Category.all, as: :radio_buttons, label: "Choisir votre catégorie" %>
       </div>
-
       <div class="actions">
-        <%= f.submit "Créer", class: "button btn-flat" %>
+        <%= f.submit "Créer", class: "button btn-flat"%>
       </div>
     <% end %>
   </div>
