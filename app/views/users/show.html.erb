@@ -48,12 +48,12 @@
         </div>
 
 </div>
-
 	<div class="comments-container">
 		<h1>Commentaires</h1>
 		<% @user.helps.each do  |help|%>
 		<ul id="comments-list" class="comments-list">
 			<li>
+      <p>test</p>
 				<div class="comment-main-level">
 					<%= cl_image_tag help.mission.user.avatar.key, class: "avatar-large", alt: "avatar-large" %>
 					<div class="comment-box">

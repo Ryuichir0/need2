@@ -12,8 +12,8 @@ class User < ApplicationRecord
   has_one_attached :avatar
 
   def rating_as_helper
-    if helps.pluck(:helper_rating).sum > 0 
-     helps.pluck(:helper_rating).sum / helps.count.to_f
+    if helps_as_helper.pluck(:helper_rating).sum > 0 
+     helps_as_helper.pluck(:helper_rating).sum / helps_as_helper.count.to_f
     end
   end
 

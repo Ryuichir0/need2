@@ -26,7 +26,8 @@ users = [
     first_name: "victoria",
     last_name: "Salpetier",
     email: "vicky.salpetier@gmail.com",
-    bio: "je suis une personne de 85 ans",
+    bio: "je suis une personne de 85 ans, ancienne prof de math ayant besoin d'aide pour des choses physique,
+    je serais ravi de donner des cours de math a vos enfants en echange !",
     address: "21 avenue thiers Nice",
     password: "azerty",
     phone: "0629872481"
@@ -36,7 +37,8 @@ users = [
     first_name: "Marjorie",
     last_name: "LeGuennec",
     email: "marjo.leguennec@gmail.com",
-    bio: "aide-soignante voulant aider",
+    bio: "Aide-soignante souffrant de douleur articulaire importante,
+     il m'arrive de demander de l'aide pour faire certaine chose même si je peux aider en retour",
     address: "22 bis avenue thiers Nice",
     password: "azerty",
     phone: "0629872482"
@@ -47,7 +49,8 @@ users = [
     last_name: "Carles",
     email: "antoine.carles@gmail.com",
     bio: "handicapé moteur depuis quelque année,
-     il m'arrive d'avoir souvent besoin d'un coup de pouce dans certain domaine",
+     il m'arrive d'avoir souvent besoin d'un coup de pouce dans certain domaine, 
+     ancien mineur de charbon j'ai souvent besoin d'aide pour les tâches communes",
     address: "gare thiers Nice",
     password: "azerty",
     phone: "0629872483"
@@ -68,7 +71,8 @@ users = [
     first_name: "Sylvie",
     last_name: "Topita",
     email: "sylvie.topita@gmail.com",
-    bio: "Bonjour je suis une mère au foyer de 40 ans avec 3 enfants en bas âges",
+    bio: "Bonjour je suis une mère au foyer de 40 ans avec 3 enfants en bas âge, 
+    j'ai peu de temps libre il m'arrive de demander de l'aide ",
     address: "21 rue de paris Nice",
     password: "azerty",
     phone: "0629872485"
@@ -89,7 +93,7 @@ users = [
     first_name: "Tibo",
     last_name: "Dupont",
     email: "tibo.dupont@gmail.com",
-    bio: "Jeune retraité, en fauteuil roulant depuis 3 ans, je cherche de temps en temps de l'aide pour certaine tache",
+    bio: "Jeune retraité, ancien comptable,je suis en fauteuil roulant depuis 3 ans, je cherche de temps en temps de l'aide pour certaine tache",
     address: "28 avenue notre dame Nice",
     password: "azerty",
     phone: "0629872486"
@@ -100,7 +104,7 @@ missions = [
   {
     slug: "administrative",
     description: "Etant seule à la maison,
-     Je cherche quelqu'un qui puisse m'aider à faire avec moi ma demande d'avis d'imposition ",
+     Je cherche quelqu'un qui puisse m'aider à faire avec moi ma demande d'avis d'imposition et d'autre papier administratif ",
     started_ad: "2021-09-01 10:00:00",
     finished_at: "2021-09-01 12:00:00",
     address: "23 Rue d'Italie, 06000 Nice",
@@ -110,7 +114,7 @@ missions = [
   {
     slug: "administrative",
     description: "A la retraite depuis maintenant quelque année, je cherche quelqu'un qui puisse m'aider a faire,
-    le tri dans mes papiers administratif",
+    le tri dans mes papiers administratif ",
     started_ad: "2021-09-05 10:00:00",
     finished_at: "2021-09-05 12:00:00",
     address: "50 Rue d'Italie, 06000 Nice",
@@ -255,20 +259,20 @@ helps = [
     mission_id: 1
   },
   {
-    helpee_review: " Très gentille personne, on c'est bien amusé",
+    helpee_review: " Très gentille personne, on s'est bien amusé",
     helpee_rating: 4.9,
     helper_review: " Personne très gentille, vraiment une bonne personne je recommande",
     helper_rating: 5,
-    user_id: 2,
-    mission_id: 1
+    user_id: 5,
+    mission_id: 3
   },
   {
     helpee_review: " Très gentille personne, c'était cool",
     helpee_rating: 4,
     helper_review: " Personne désagréable je ne recommande pas",
     helper_rating: 2,
-    user_id: 2,
-    mission_id: 1
+    user_id: 6,
+    mission_id: 4
   },
   {
     helpee_review: " Très bonne journée passé en compagnie de vicky",
@@ -276,7 +280,7 @@ helps = [
     helper_review: " Personne désagréable je ne recommande pas",
     helper_rating: 2,
     user_id: 2,
-    mission_id: 3
+    mission_id: 6
   }
 ]
 
@@ -361,18 +365,19 @@ end
 puts "Missions Created"
 
 increment = 1
-#  helps.each do |help|
-#    puts "help #{increment}"
-#    help = Help.new(
-#      helpee_review: help[:helpee_review],
-#      helpee_rating: help[:helpee_rating],
-#      helper_review: help[:helper_review],
-#      helper_rating: help[:helper_rating],
-#      user: user_list[help[:user_id] - 1],
-#      mission_id: mission_list[help[:mission_id]- 1].id,
-#    )
-#    help.save!
-#    increment += 1
-# end
+  helps.each do |help|
+    puts "help #{increment}"
+    help = Help.new(
+      helpee_review: help[:helpee_review],
+      helpee_rating: help[:helpee_rating],
+      helper_review: help[:helper_review],
+      helper_rating: help[:helper_rating],
+      status: "confirmed",
+      user: user_list[help[:user_id] - 1],
+      mission_id: mission_list[help[:mission_id]- 1].id,
+    )
+    help.save!
+    increment += 1
+ end
 puts "helps Created"
 puts "all is ok"
