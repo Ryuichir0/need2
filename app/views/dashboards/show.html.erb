@@ -77,12 +77,8 @@
                     <p>Date de fin : <%= (mission.started_ad).strftime("%d/%m/%Y %X")%></p>
                   </div>
                   <p> <%= mission.description %></p>
-                  <%= link_to "Cliquer ici", mission.user.pseudo, class: "info-candidat"  %>
                   <%= link_to icon("fas fa-info-circle","salut ca va?"), "#", class: "info-candidat"%>
                 </div>
-                <p> <%= mission.description %></p>
-                <%= link_to icon("fas fa-info-circle","salut ca va?"), "#", class: "info-candidat"%>
-              </div>
               <% mission.helps.each do |help| %>
                 <% if help.status == "confirmed" %>
                   <div class="p-3">
