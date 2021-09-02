@@ -313,7 +313,7 @@ categories.each do |category|
   category = Category.new(
     name: category[:name]
   )
-  category.photo.attach(io: File.open("app/assets/images/category/#{category[:name].parameterize.underscore}1.png"), filename: "#{category[:name].parameterize.underscore}1.png", content_type:'image/png')
+  category.photo.attach(io: File.open("app/assets/images/category/#{category[:name].parameterize.underscore}2.png"), filename: "#{category[:name].parameterize.underscore}2.png", content_type:'image/png')
   #category.photo.attach(io: File.open("app/assets/images/category/#{category[:name].parameterize.underscore}2.png"), filename: "#{category[:name].parameterize.underscore}2.png", content_type:'image/png')
   #category.photo.attach(io: File.open("app/assets/images/category/#{category[:name].parameterize.underscore}3.png"), filename: "#{category[:name].parameterize.underscore}3.png", content_type:'image/png')
   category.save!
