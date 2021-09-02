@@ -11,11 +11,15 @@ class User < ApplicationRecord
   has_one_attached :avatar
 
   def rating_as_helper
-    helps.pluck(:helper_rating).sum / helps.count.to_f
+    if helps.pluck(:helper_rating).sum > 1 
+     helps.pluck(:helper_rating).sum / helps.count.to_f
+    end
   end
 
   def rating_as_helpee
+    if helps_as_helpee.pluck(:helpee_rating).sum > 1
     helps_as_helpee.pluck(:helpee_rating).sum / helps_as_helpee.count.to_f
+    end
   end
 
   def review_for_helpee

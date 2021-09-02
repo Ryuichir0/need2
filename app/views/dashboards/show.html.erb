@@ -73,19 +73,23 @@
               <div class="mt-4 p-2 product-card">
                 <div class="info">
                   <div class="date">
+<<<<<<< HEAD
                     <p>Date de début : <%= (mission.started_ad).strftime("%A/%d/%B/%Y %X")%></p>
                     <p>Date de fin : <%= (mission.started_ad).strftime("%A/%d/%B/%Y %X")%></p>
+=======
+                    <p>Date de début : <%= (mission.started_ad).strftime("%d/%m/%Y %X")%></p>
+                    <p>Date de fin : <%= (mission.finished_at).strftime("%d/%m/%Y %X")%></p>
+>>>>>>> f36756761259499b49a17f95b87e841ab19e3bef
                   </div>
                   <p> <%= mission.description %></p>
-                  <%= link_to icon("fas fa-info-circle","salut ca va?"), "#", class: "info-candidat"%>
                 </div>
               <% mission.helps.each do |help| %>
                 <% if help.status == "confirmed" %>
-                  <div class="p-3">
-                    <h3> Helpee </h3>
-                    <%= link_to "Information candidat", user_path(help.user.pseudo) , class: "candidat"  %>
-                    <%= cl_image_tag help.user.avatar.key, class: "avatar1" %>
-                    <p class="user"><%= help.user.first_name %></p>
+                  <div class="helper">
+                    <h3> Helper </h3>
+                    <%= link_to "Information candidat", user_path(help.user.pseudo) , class: " candidat"  %>
+                    <%= cl_image_tag help.user.avatar.key, class: " avatar1" %>
+                    <p class=" user"><%= help.user.first_name %></p>
                   </div>
                 <% end %>
               <% end %>
