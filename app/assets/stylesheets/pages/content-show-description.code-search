@@ -1,0 +1,19 @@
+# Query: content-show-description
+# ContextLines: 1
+
+3 résultats - Fichiers 2
+
+app/assets/stylesheets/pages/_show.scss:
+  23  }
+  24: .content-show-description{
+  25    overflow: hidden;
+
+
+app/views/missions/show.html.erb:
+  10      <div class="content-show-right">
+  11:       <div class="content-show-description">
+  12                <h3> Description :</h3>
+
+  22        </div>
+  23:       <div class="content-show-description">
+  24                      <div class="card-product-infos-review">

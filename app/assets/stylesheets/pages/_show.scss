@@ -25,24 +25,30 @@ body{
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 20px 0 20px 20px; 
+  margin: 20px 0 20px 20px;
   border-radius: 20px;
   padding: 10px 20px 10px 20px;
   font-size: smaller;
   background-color: white;
   text-justify: auto;
+  p{
+    padding-left:20px;
+  }
 }
 
 .content-show-rating{
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 20px 0 20px 20px; 
+  margin: 20px 0 20px 20px;
   border-radius: 20px;
   padding: 10px 20px 10px 20px;
   font-size: smaller;
   background-color: white;
   text-justify: auto;
+  h4{
+    padding-left:20px;
+  }
 }
 .content-show-review{
     display: grid;
@@ -67,7 +73,7 @@ body{
 .content-show-profil-left {
   display: flex;
   padding: 5px;
-  margin: 20px 20px 20px 65px; 
+  margin: 20px 20px 20px 65px;
   width: 28%;
 }
 .content-show-profil-left-text p {
