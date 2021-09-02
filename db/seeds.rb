@@ -46,7 +46,8 @@ users = [
     first_name: "Antoine",
     last_name: "Carles",
     email: "antoine.carles@gmail.com",
-    bio: "handicapé moteur, souvent besoin d'aide",
+    bio: "handicapé moteur depuis quelque année,
+     il m'arrive d'avoir souvent besoin d'un coup de pouce dans certain domaine",
     address: "gare thiers Nice",
     password: "azerty",
     phone: "0629872483"
@@ -56,7 +57,8 @@ users = [
     first_name: "Robert",
     last_name: "Tametti",
     email: "robert.tametti@gmail.com",
-    bio: "Ancien boxeur à la retraite",
+    bio: "Ancien boxeur à la retraite, je cherche à aider les personnes dans le besoin, 
+    mais aussi à m'aider sur certain domaine",
     address: "50 avenue de la marne Nice",
     password: "azerty",
     phone: "0629872484"
@@ -139,7 +141,7 @@ missions = [
     slug: "bricolage",
     description: "Bonjour je cherche quelqu'un pour m'aider à réparer ma plomberie ",
     started_ad: "2021-08-10 17:00:00",
-    finished_at: "2021-09-10 17:30:00",
+    finished_at: "2021-09-10 18:30:00",
     address: "17 Bd Victor Hugo, 06000 Nice",
     user_id: 7,
     category_id: 2
@@ -169,7 +171,7 @@ missions = [
     qui puisse m'aider à traduire et remplir avec moi ma demande de visa ",
     started_ad: "2021-09-05 20:00:00",
     finished_at: "2021-09-05 22:00:00",
-    address: "71 Bld Gorbella, 06100 Nice",
+    address: "71 Bd Gorbella, 06100 Nice",
     user_id: 3,
     category_id: 4
   },
