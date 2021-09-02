@@ -81,18 +81,14 @@
                   <%= link_to "Cliquer ici", mission.user.pseudo, class: "info-candidat"  %>
                   <%= link_to icon("fas fa-info-circle","salut ca va?"), "#", class: "info-candidat"%>
                 </div>
-                <p> <%= mission.description %></p>
-                <%= link_to icon("fas fa-info-circle","salut ca va?"), "#", class: "info-candidat"%>
-              </div>
-              <% mission.helps.each do |help| %>
-                <% if help.status == "confirmed" %>
-                  <div class="p-3">
-                      <h3> Helpee </h3>
-                      <%= link_to "Information candidat", user_path(help.user.pseudo) , class: "candidat"  %>
-
-                      <%= cl_image_tag help.user.avatar.key, class: "avatar1" %>
-                      <p class="user1"><%= help.user.first_name %></p>
-                    </div>
+                <% mission.helps.each do |help| %>
+                  <% if help.status == "confirmed" %>
+                    <div class="pt-4 border">
+                        <h3> Helpee </h3>
+                        <%= cl_image_tag help.mission.user.avatar.key, class: "avatar-card" %>
+                        <p class="user"><%= help.mission.user.first_name %></p>
+                      </div>
+                  <% end %>
                 <% end %>
               </div>
             <% end %>

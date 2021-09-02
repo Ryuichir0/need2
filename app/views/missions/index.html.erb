@@ -4,7 +4,7 @@
 
 <div class="category">
   <%= form_tag missions_path, method: :get do %>
-    <%= link_to "Toute les catégories", missions_path(category: nil), :class => "button b-blue" %>
+    <%= link_to "retour", missions_path(category: nil), :class => "button b-blue" %>
     <% Category.all.each do |category| %>
       <%= link_to category.name, missions_path(category: category.id), :class => "button b-blue" %>
     <% end %>
