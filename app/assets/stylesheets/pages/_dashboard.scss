@@ -1,6 +1,6 @@
 .caret{
   display:flex;
-  width:150px;
+  width:200px;
   h2 {
     width:150px;
   }
@@ -16,6 +16,17 @@ font-size:35px;
 margin-left:20px;
 margin-right:27px;
 }
+#need-margin {
+font-size:35px;
+margin-left:20px;
+}
+
+#help-margin{
+font-size:35px;
+margin-left:42px;
+}
+
+
 
 .title-toggle{
   color: $user;
