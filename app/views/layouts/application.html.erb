@@ -36,13 +36,15 @@
     <header>
       <%= render 'shared/navbar' %>
     </header>
+
     <main>
-     <%= render 'shared/flashes' %>
+      <%= render 'shared/flashes' %>
       <%= yield %>
       <div class="push-bottom" style="height: 50px">
       </div>
-      <%= render 'shared/footer' %>
+     <%= render 'shared/footer' %>
     </main>
+
 
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://npmcdn.com/flatpickr/dist/l10n/fr.js"></script>
@@ -57,5 +59,7 @@
           flatpickr('#flatpickr', config);
     </script>
   </body>
+
+
 
 </html>

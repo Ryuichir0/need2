@@ -57,7 +57,7 @@ users = [
     first_name: "Robert",
     last_name: "Tametti",
     email: "robert.tametti@gmail.com",
-    bio: "Ancien boxeur à la retraite, je cherche à aider les personnes dans le besoin, 
+    bio: "Ancien boxeur à la retraite, je cherche à aider les personnes dans le besoin,
     mais aussi à m'aider sur certain domaine",
     address: "50 avenue de la marne Nice",
     password: "azerty",
@@ -119,7 +119,7 @@ missions = [
   },
   {
     slug: "administrative",
-    description: "Je cherche quelqu'un ayant une bonne connaissance en informatique, 
+    description: "Je cherche quelqu'un ayant une bonne connaissance en informatique,
     pour m'aider à remplir ma demande de retraite en ligne",
     started_ad: "2021-09-12 09:00:00",
     finished_at: "2021-09-12 12:00:00",
@@ -282,25 +282,25 @@ helps = [
 
 categories = [
   {
-    name: "Aide administrative",
+    name: "Administration",
   },
   {
-    name: "Aide au bricolage",
+    name: "Bricolage",
   },
   {
     name: "Aide à domicile",
   },
   {
-    name: "Aide linguistique",
+    name: "Linguistique",
   },
   {
-    name: "Aide logistique",
+    name: "Logistique",
   },
   {
     name: "Aide à la personne",
   },
   {
-    name: "Aide scolaire",
+    name: "Soutien scolaire",
   }
 ]
 
