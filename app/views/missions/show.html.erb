@@ -50,7 +50,7 @@
         <%= form_with url: confirm_help_path(mission_id: @mission.id) do |form| %>
           <div class="row">
             <% @mission.helps.each do |help| %>
-              <div class="col-4">
+              <div class="col-sm">
                 <div class="radio-box">
                   <%= label_tag "help_#{help.id}" do %>
                     <%= radio_button_tag "help", help.id, false, class: "card-input-element d-none" %>
