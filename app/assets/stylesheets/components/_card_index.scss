@@ -13,6 +13,8 @@ body{
 .card-index:hover {
   transform: scale(1.1);
   transition: 0.5s;
+  border: 5px solid $user;
+
 }
 .card-index > img {
   height: 200px;

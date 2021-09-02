@@ -12,14 +12,12 @@
               <h3> Description :</h3>
               <p> <%= @mission.description %></p>
       </div>
-      <div class="content-show-rating">
-              <h4> Note de <%=@mission.user.first_name %> <%= @mission.user.rating_as_helpee.floor(2) %> /5 </h4>
-              <div class="content-show-review">
-                  <% @mission.user.review_for_helpee.last(4).split(",").each do |review| %>
-                    <div class=" content-review "><p><i class="fas fa-quote-right"></i><strong><%=review[3]%></strong></p></div>
-                    <div class=" content-review pl-1"><p><i class="fas fa-quote-right"></i><strong><%=review[2]%></strong></p></div>
-                    <div class=" content-review pl-1"><p><i class="fas fa-quote-right"></i><p><strong><%=review[1]%></strong></p></div>
-                    <div class=" content-review pl-1"><p><i class="fas fa-quote-right"></i><strong><%=review[0]%></strong></p></div>
+      <div class="d-flex content-show-rating">
+
+              <div class="d-flex content-show-review">
+              <h4> Note de <%=@mission.user.first_name %>
+                  <% @mission.user.rating_as_helpee.to_i.times do |index| %>
+                    <i id="<%= index + 1 %>" class="review-rating fas fa-star"></i></h4>
                   <% end %>
               </div>
       </div>
@@ -31,6 +29,7 @@
         <div class = "content-show-profil-left-text m-1 p-1">
           <p> Annonce créée par <%= @mission.user.first_name.capitalize %></p>
           <p> Membre depuis : <%= Date.parse(@mission.user.created_at.to_s).strftime("%d/%m/%Y") %>
+          <p><%= @mission.user.bio%></p>
         </div>
       </div>
       <% if current_user != @mission.user %>
