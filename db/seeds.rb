@@ -285,19 +285,19 @@ categories = [
     name: "Administration",
   },
   {
-    name: "Bricolage",
+    name: "Aide à domicile",
   },
   {
-    name: "Aide à domicile",
+    name: "Aide à la personne",
+  },
+  {
+    name: "Bricolage",
   },
   {
     name: "Linguistique",
   },
   {
     name: "Logistique",
-  },
-  {
-    name: "Aide à la personne",
   },
   {
     name: "Soutien scolaire",
