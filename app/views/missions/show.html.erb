@@ -21,6 +21,17 @@
           </h4>
         </div>
       </div>
+      <div class="content-show-description">
+                    <div class="card-product-infos-review">
+                        <h3>review</h2>
+                      <% @mission.user.helps_as_helpee.where(status: "confirmed").last(3).each do |help| %>
+                        <div class="flash flash-success fade show">
+                        <%= cl_image_tag help.user.avatar.key, class: "avatar-large", alt: "avatar-large" %>
+                        <%= help.helpee_review %>
+                        </div>
+                      <% end %>
+                    </div>
+      </div>
     </div>
   </div>
   <div class="content-show-profil d-flex align-items-center ">
