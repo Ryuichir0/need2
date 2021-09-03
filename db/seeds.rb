@@ -269,11 +269,27 @@ helps = [
     mission_id: 8
   },
   {
-    helpee_review: " Très gentille personne, on s'est bien amusé",
+    helpee_review: " Personne avec un bon sens de l'humour, je recommande",
     helpee_rating: 4.9,
     helper_review: " Personne très gentille, vraiment une bonne personne je recommande",
     helper_rating: 5,
     user_id: 5,
+    mission_id: 3
+  },
+  {
+    helpee_review: " Très gentille personne, on s'est bien amusé",
+    helpee_rating: 4,
+    helper_review: " Personne très gentille, vraiment une bonne personne je recommande",
+    helper_rating: 5,
+    user_id: 2,
+    mission_id: 3
+  },
+  {
+    helpee_review: " c'était parfait , très bonne journée",
+    helpee_rating: 4.9,
+    helper_review: " Personne très gentille, vraiment une bonne personne je recommande",
+    helper_rating: 5,
+    user_id: 1,
     mission_id: 3
   },
   {
