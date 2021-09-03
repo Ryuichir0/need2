@@ -51,7 +51,7 @@ users = [
     bio: "handicapé moteur depuis quelque année,
      il m'arrive d'avoir souvent besoin d'un coup de pouce dans certain domaine, 
      ancien mineur de charbon j'ai souvent besoin d'aide pour les tâches communes",
-    address: "gare thiers Nice",
+    address: "21 gare thiers Nice",
     password: "azerty",
     phone: "0629872483"
   },
@@ -97,6 +97,16 @@ users = [
     address: "28 avenue notre dame Nice",
     password: "azerty",
     phone: "0629872486"
+  },
+  {
+    pseudo: "Marilou",
+    first_name: "Mariline",
+    last_name: "Dabbonvile",
+    email: "mariline.dab@gmail.com",
+    bio: "A la suite d'un accident de la route, je suis handicapée à 70% et certaine tache quotidienne me sont difficile"
+    address: "36 avenue notre dame Nice",
+    password: "azerty",
+    phone: "0629872486"
   }
 ]
 
@@ -107,7 +117,7 @@ missions = [
      Je cherche quelqu'un qui puisse m'aider à faire avec moi ma demande d'avis d'imposition et d'autre papier administratif ",
     started_ad: "2021-09-01 10:00:00",
     finished_at: "2021-09-01 12:00:00",
-    address: "23 Rue d'Italie, 06000 Nice",
+    address: "30 Av. Jean Médecin, 06000 Nice",
     user_id: 1,
     category_id: 1
   },
@@ -137,7 +147,7 @@ missions = [
     je cherche quelqu'un qui puisse m'aider ",
     started_ad: "2021-08-10 17:00:00",
     finished_at: "2021-09-10 17:30:00",
-    address: "17 Bd Victor Hugo, 06000 Nice",
+    address: "50 Rue d'Italie, 06000 Nice",
     user_id: 2,
     category_id: 2
   },
@@ -146,7 +156,7 @@ missions = [
     description: "Bonjour je cherche quelqu'un pour m'aider à réparer ma plomberie ",
     started_ad: "2021-08-10 17:00:00",
     finished_at: "2021-09-10 18:30:00",
-    address: "17 rue Jean medecin, 06000 Nice",
+    address: "17 Av. Jean medecin, 06000 Nice",
     user_id: 7,
     category_id: 2
   },
@@ -165,8 +175,8 @@ missions = [
     description: "Bonjour, je cherche quelqu'un pour remplacer mon aide à domicile qui devras s'absenter pour une journée, ",
     started_ad: "2021-10-20 14:00:00",
     finished_at: "2021-08-20 16:00:00",
-    address: " 10 rue Verdi, 06000 Nice",
-    user_id: 1,
+    address: " 30 Av. Jean Médecin, 06000 Nice",
+    user_id: 8,
     category_id: 3
   },
   {
@@ -175,8 +185,8 @@ missions = [
     qui puisse m'aider à traduire et remplir avec moi ma demande de visa ",
     started_ad: "2021-09-05 20:00:00",
     finished_at: "2021-09-05 22:00:00",
-    address: "71 Bd Gorbella, 06100 Nice",
-    user_id: 3,
+    address: "34 Bd Gorbella, 06100 Nice",
+    user_id: 4,
     category_id: 4
   },
   {
@@ -186,7 +196,7 @@ missions = [
     started_ad: "2021-09-07 14:00:00",
     finished_at: "2021-09-07 16:00:00",
     address: "34 bd gorbella, 06000 Nice",
-    user_id: 7,
+    user_id: 4,
     category_id: 4
   },
   {
@@ -195,7 +205,7 @@ missions = [
     ayant de grosse douleur au dos je ne peux pas le porter tout seul",
     started_ad: "2021-08-18 09:00:00",
     finished_at: "2021-08-18 11:00:00",
-    address: "5 Av Romain Rolland, 06100 Nice",
+    address: "30 Av. Jean Médecin, 06000 Nice",
     user_id: 1,
     category_id: 5
   },
@@ -205,7 +215,7 @@ missions = [
     je dois trouver quelqu'un pour m'aider à mettre l'ancien au encombrant",
     started_ad: "2021-09-15 09:00:00",
     finished_at: "2021-08-15 11:00:00",
-    address: "5 Rue Grimaldi, 06000 Nice",
+    address: "71 Bd Gorbella, 06100 Nice",
     user_id: 3,
     category_id: 5
   },
@@ -252,11 +262,11 @@ missions = [
 helps = [
   {
     helpee_review: " Adresse correct tout c'est bien passé",
-    helpee_rating: 4.5,
+    helpee_rating: 4,
     helper_review: " Personne à l'heure, gentil je recommande",
     helper_rating: 5,
     user_id: 5,
-    mission_id: 1
+    mission_id: 8
   },
   {
     helpee_review: " Très gentille personne, on s'est bien amusé",
@@ -271,12 +281,12 @@ helps = [
     helpee_rating: 4,
     helper_review: " Personne désagréable je ne recommande pas",
     helper_rating: 2,
-    user_id: 6,
+    user_id: 1,
     mission_id: 4
   },
   {
     helpee_review: " Très bonne journée passé en compagnie de vicky",
-    helpee_rating: 3,
+    helpee_rating: 4,
     helper_review: " Personne désagréable je ne recommande pas",
     helper_rating: 2,
     user_id: 2,

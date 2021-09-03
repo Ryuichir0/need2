@@ -104,6 +104,10 @@ margin:15px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 15px;
 }
+.product-card:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
+}
 .avatar-card {
   object-fit: cover;
   width: 60px;

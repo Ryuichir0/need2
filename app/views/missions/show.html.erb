@@ -30,10 +30,12 @@
           <div class="card-product-infos-review">
               <h3>review</h3>
               <% @mission.user.helps_as_helpee.where(status: "confirmed").last(3).each do |help| %>
-                <div class="flash flash-success fade show">
-                <%= cl_image_tag help.user.avatar.key, class: "avatar-large", alt: "avatar-large" %>
-                <%= help.helpee_review %>
-                
+                <div class="d-flex flash flash-success fade show mb-2 ">
+                  <%= cl_image_tag help.user.avatar.key, class: "avatar-large", alt: "avatar-large" %>
+                  <div style="mt-2 pt-2 height: 20px;">
+                    <h5 class="pt-1 pr-2"><span class="pt-2"><%= help.user.first_name.capitalize %></span><span class="pl-2" style="color: grey; font-size: 16px; font-style: oblique 43deg;"><%=(help.mission.updated_at).strftime("Le %d/%m/%Y")%></span></h5>
+                    <h6><i class="pr-2 fas fa-quote-left"></i><%= help.helpee_review %><i class="pl-2 fas fa-quote-right"></i><h6>
+                  </div>
                 </div>
               <% end %>
           </div>
