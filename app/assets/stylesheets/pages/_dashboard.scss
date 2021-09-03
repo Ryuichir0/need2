@@ -1,43 +1,38 @@
+.container2{
+  width: 75%;
+  margin: 0 auto;
+}
 .caret{
-  display:flex;
-  width:200px;
-  h2 {
-    width:150px;
+  width:240px;
+  .fa-angle-right{
+    padding-left: 15px;
   }
 }
 
 #need {
 font-size:35px;
-margin-left:20px;
 }
 
 #help{
 font-size:35px;
-margin-left:20px;
-margin-right:27px;
 }
+
 #need-margin {
 font-size:35px;
-margin-left:20px;
 }
 
 #help-margin{
 font-size:35px;
-margin-left:42px;
 }
-
-
 
 .title-toggle{
   color: $user;
 }
-
-
 .user-card {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 0 0 0 250px;
+  margin: 0 auto;
   width: 900px;
 }
 .user-info{
@@ -47,24 +42,26 @@ margin-left:42px;
   flex-grow: 1;
 
   vertical-align: center;
-  margin-left:40px;
   padding: 20px;
   h1 {
     margin-right: 30px;
 
   }
 }
-
 .user-info-content {
 margin:15px;
 }
 
 .contain-data{
-  margin-left:150px;
+  margin-left:40px;
   display: flex;
   width: 1000px;
 }
 
+.chevron{
+  height: 200px;
+  margin-top: 40px;
+}
 .card-index-infos{
   border-radius: 30px;
   justify-content: center;
@@ -75,6 +72,9 @@ margin:15px;
 }
 #need:hover{
   color:$user;
+}
+#historique:hover{
+  color: $user;
 }
 .nav{
   background-color: $user-info;
@@ -94,15 +94,19 @@ margin:15px;
 .product-list{
   background-color: $user-info;
   border-radius:20px;
+  width: 800px;
   padding: 20px 30px;
   margin-top: 45px;
-  margin-left: 20px;
 }
 .product-card {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 15px;
+}
+.product-card:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
 }
 .avatar-card {
   object-fit: cover;
@@ -134,6 +138,13 @@ margin:15px;
   }
 }
 .helper{
-  padding: 0 10px;
+  text-align: center;
+  height: 100%;
+  .avatar1{
+    width: 50px;
+  }
 }
 
+#historique{
+  cursor: pointer;
+}
