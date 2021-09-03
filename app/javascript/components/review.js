@@ -2,6 +2,8 @@ const review = () => {
   const button = document.getElementById("btn-dashboard");
   const div = document.querySelector("#div_review");
 
+  if (!button) return;
+  
   button.addEventListener("click", (event) => {
     console.log(event);
     div.classList.toggle("d-none");

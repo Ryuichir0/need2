@@ -18,7 +18,6 @@ const dashboard = () => {
 
     needtitle.classList.add("title-toggle");
     helptitle.classList.remove("title-toggle");
-    histotitle.classList.remove("title-togle");
   });
 
   help.addEventListener("click", (event) => {
@@ -37,7 +36,6 @@ const dashboard = () => {
 
     needtitle.classList.remove("title-toggle");
     helptitle.classList.remove("title-toggle");
-    histotitle.classList.add("title-toggle");
 
   });
 }

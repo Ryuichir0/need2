@@ -48,9 +48,9 @@ users = [
     first_name: "Antoine",
     last_name: "Carles",
     email: "antoine.carles@gmail.com",
-    bio: "handicapé moteur depuis quelque année,
-     il m'arrive d'avoir souvent besoin d'un coup de pouce dans certain domaine, 
-     ancien mineur de charbon j'ai souvent besoin d'aide pour les tâches communes",
+    bio: "A la retraite depuis quelques années,
+     il m'arrive d'avoir souvent besoin d'un coup de pouce dans certain , 
+     grand-père d'un garçon de 14 ans",
     address: "21 gare thiers Nice",
     password: "azerty",
     phone: "0629872483"
@@ -103,7 +103,7 @@ users = [
     first_name: "Mariline",
     last_name: "Dabbonvile",
     email: "mariline.dab@gmail.com",
-    bio: "A la suite d'un accident de la route, je suis handicapée à 70% et certaine tache quotidienne me sont difficile"
+    bio: "A la suite d'un accident de la route, je suis handicapée à 70% et certaine tache quotidienne me sont difficile",
     address: "36 avenue notre dame Nice",
     password: "azerty",
     phone: "0629872486"
