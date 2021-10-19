@@ -71,7 +71,7 @@ users = [
     first_name: "Sylvie",
     last_name: "Topita",
     email: "sylvie.topita@gmail.com",
-    bio: "Bonjour je suis une mère au foyer de 40 ans avec 3 enfants en bas âge, 
+    bio: "Bonjour je suis une mère au foyer de 40 ans avec 3 enfants en bas âge,
     j'ai peu de temps libre il m'arrive de demander de l'aide ",
     address: "21 rue de paris Nice",
     password: "azerty",
@@ -344,8 +344,6 @@ categories.each do |category|
     name: category[:name]
   )
   category.photo.attach(io: File.open("app/assets/images/category/#{category[:name].parameterize.underscore}2.png"), filename: "#{category[:name].parameterize.underscore}2.png", content_type:'image/png')
-  #category.photo.attach(io: File.open("app/assets/images/category/#{category[:name].parameterize.underscore}2.png"), filename: "#{category[:name].parameterize.underscore}2.png", content_type:'image/png')
-  #category.photo.attach(io: File.open("app/assets/images/category/#{category[:name].parameterize.underscore}3.png"), filename: "#{category[:name].parameterize.underscore}3.png", content_type:'image/png')
   category.save!
   category_list << category
   increment += 1
