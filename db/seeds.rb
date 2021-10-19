@@ -49,8 +49,8 @@ users = [
     last_name: "Carles",
     email: "antoine.carles@gmail.com",
     bio: "A la retraite depuis quelques années,
-     il m'arrive d'avoir souvent besoin d'un coup de pouce dans certain ,
-     grand-père d'un garçon de 14 ans",
+     il m'arrive d'avoir souvent besoin d'un coup de pouce dans certain , 
+     grand-père d'un petit garçon de 14 ans",
     address: "21 gare thiers Nice",
     password: "azerty",
     phone: "0629872483"
@@ -242,8 +242,8 @@ missions = [
     slug: "scolaire",
     description: "Ayant quitté l'école très tôt,
      je cherche quelqu'un qui puisse aider mon fils à faire ses devoirs de 4 ème",
-    started_ad: "2021-08-21 14:00:00",
-    finished_at: "2021-08-21 15:00:00",
+    started_ad: "2021-09-8 14:00:00",
+    finished_at: "2021-09-8 16:00:00",
     address: "5 Av Desambrois, 06000 Nice",
     user_id: 3,
     category_id: 7
@@ -269,11 +269,27 @@ helps = [
     mission_id: 8
   },
   {
-    helpee_review: " Très gentille personne, on s'est bien amusé",
+    helpee_review: " Personne avec un bon sens de l'humour, je recommande",
     helpee_rating: 4.9,
     helper_review: " Personne très gentille, vraiment une bonne personne je recommande",
     helper_rating: 5,
     user_id: 5,
+    mission_id: 3
+  },
+  {
+    helpee_review: " Très gentille personne, on s'est bien amusé",
+    helpee_rating: 4,
+    helper_review: " Personne très gentille, vraiment une bonne personne je recommande",
+    helper_rating: 5,
+    user_id: 2,
+    mission_id: 3
+  },
+  {
+    helpee_review: " c'était parfait , très bonne journée",
+    helpee_rating: 4.9,
+    helper_review: " Personne très gentille, vraiment une bonne personne je recommande",
+    helper_rating: 5,
+    user_id: 1,
     mission_id: 3
   },
   {
